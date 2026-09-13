@@ -43,7 +43,7 @@ export function Muro() {
   }
 
   return (
-    <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-12">
+    <div className="space-y-10">
       <form onSubmit={enviar} className="space-y-5">
         <p className="text-[0.9375rem] leading-[1.7] text-apagado">{muro.invitacion}</p>
 
@@ -59,7 +59,7 @@ export function Muro() {
             maxLength={muro.maxAlias}
             autoComplete="off"
             onChange={(evento) => setAlias(evento.target.value)}
-            className="mt-2 w-full border border-borde bg-fondo px-4 py-3 text-[0.9375rem] text-texto placeholder:text-apagado/60"
+            className="mt-2 w-full rounded-md border border-borde bg-superficie px-4 py-3 text-[0.9375rem] text-texto placeholder:text-apagado/60"
             placeholder="Cómo quieres firmar"
           />
         </div>
@@ -76,7 +76,7 @@ export function Muro() {
             maxLength={muro.maxCaracteres}
             onChange={(evento) => setTexto(evento.target.value)}
             aria-describedby={`${idBase}-cuenta ${idBase}-aviso`}
-            className="mt-2 w-full resize-y border border-borde bg-fondo px-4 py-3 text-[0.9375rem] leading-[1.7] text-texto placeholder:text-apagado/60"
+            className="mt-2 w-full resize-y rounded-md border border-borde bg-superficie px-4 py-3 text-[0.9375rem] leading-[1.7] text-texto placeholder:text-apagado/60"
             placeholder="A qué hora estudias o trabajas, y qué haces en esa hora"
           />
           <p id={`${idBase}-cuenta`} className="mt-2 font-mono text-meta text-apagado">
@@ -87,7 +87,7 @@ export function Muro() {
         <button
           type="submit"
           disabled={!valido}
-          className="border border-acento bg-acento px-5 py-3 font-mono text-meta tracking-[0.08em] text-fondo uppercase transition-opacity disabled:cursor-not-allowed disabled:border-borde disabled:bg-transparent disabled:text-apagado"
+          className="rounded-md border border-acento bg-acento px-5 py-3 font-mono text-meta tracking-[0.08em] text-fondo uppercase transition-opacity disabled:cursor-not-allowed disabled:border-borde disabled:bg-transparent disabled:text-apagado"
         >
           Publicar aporte
         </button>
@@ -97,20 +97,20 @@ export function Muro() {
         </p>
       </form>
 
-      <div>
+      <div className="border-t border-borde pt-8">
         <h3 className="font-mono text-meta tracking-[0.12em] text-acento uppercase">
           Aportes de esta sesión
         </h3>
 
         <ul ref={listaRef} aria-live="polite" className="mt-5 space-y-4">
           {aportes.length === 0 && (
-            <li className="border border-dashed border-borde px-4 py-6 text-[0.9375rem] text-apagado">
+            <li className="rounded-lg border border-dashed border-borde px-4 py-6 text-[0.9375rem] text-apagado">
               Todavía no hay aportes en esta sesión.
             </li>
           )}
 
           {aportes.map((aporte) => (
-            <li key={aporte.id} className="border border-borde bg-superficie px-4 py-4">
+            <li key={aporte.id} className="rounded-lg border border-borde bg-superficie px-4 py-4">
               <p className="font-mono text-meta text-acento">{aporte.alias}</p>
               <p className="mt-2 text-[0.9375rem] leading-[1.7]">{aporte.texto}</p>
             </li>

@@ -14,7 +14,7 @@ function Estado({ estado }: { estado: 'verificado' | 'por-confirmar' | 'pendient
 
   return (
     <span
-      className={`inline-block rounded-sm border px-2 py-1 font-mono text-meta ${
+      className={`inline-block rounded-md border px-2 py-1 font-mono text-meta ${
         estado === 'verificado' ? 'border-borde text-apagado' : 'border-acento text-acento'
       }`}
     >
@@ -136,7 +136,7 @@ export function CuerpoMetodo() {
         ))}
       </ol>
 
-      <div data-ancla="radicado" className="border border-borde bg-fondo p-4">
+      <div data-ancla="radicado" className="rounded-lg border border-borde bg-fondo p-4">
         <p className={secundario}>{capa.nota}</p>
         <div className="mt-3">
           <Estado estado="pendiente" />
@@ -154,7 +154,7 @@ export function CuerpoAyuda() {
     <div className="space-y-6">
       <ul className="space-y-4">
         {capa.lineas.map((linea) => (
-          <li key={linea.numero} className="border border-borde bg-fondo p-4">
+          <li key={linea.numero} className="rounded-lg border border-borde bg-fondo p-4">
             <a
               href={`tel:${linea.numero}`}
               className="font-mono text-2xl text-acento underline decoration-transparent underline-offset-4 transition-colors hover:decoration-acento"
@@ -162,7 +162,7 @@ export function CuerpoAyuda() {
               {linea.numero}
               <span className="sr-only">, llamar</span>
             </a>
-            <p className="mt-2 font-titular text-base font-medium">{linea.nombre}</p>
+            <p className="mt-2 font-titular text-base font-semibold">{linea.nombre}</p>
             <p className={`mt-1 ${secundario}`}>{linea.detalle}</p>
             <p className="mt-2 font-mono text-meta text-apagado">{linea.disponibilidad}</p>
           </li>

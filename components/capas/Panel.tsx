@@ -101,7 +101,7 @@ export function Panel({
         role="dialog"
         aria-modal="true"
         aria-labelledby="panel-capa-titulo"
-        className="panel-entra absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col border-t-2 border-t-acento bg-superficie shadow-[0_-1px_0_0_var(--color-borde)] md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[min(30rem,46vw)] md:border-l md:border-l-borde"
+        className="panel-entra absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col rounded-t-xl border-t-2 border-t-acento bg-superficie md:inset-y-0 md:right-0 md:left-auto md:max-h-none md:w-[min(30rem,46vw)] md:rounded-none md:border-l md:border-l-borde"
       >
         <div className="flex items-start justify-between gap-4 border-b border-borde px-5 py-4 md:px-7 md:py-6">
           <div className="min-w-0">
@@ -127,7 +127,7 @@ export function Panel({
             ref={cierreRef}
             type="button"
             onClick={cerrar}
-            className="shrink-0 rounded-sm border border-borde px-3 py-2 font-mono text-meta text-apagado transition-colors hover:border-acento hover:text-texto"
+            className="shrink-0 rounded-md border border-borde px-3 py-2 font-mono text-meta text-apagado transition-colors hover:border-acento hover:text-texto"
           >
             Cerrar
             <span className="sr-only"> la capa complementaria</span>

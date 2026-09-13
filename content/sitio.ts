@@ -15,5 +15,5 @@ export const sitio: Sitio = {
   descripcion:
     'Crónica hipertextual sobre la madrugada como tercera jornada de una estudiante virtual que además es madre y trabaja por su cuenta. Estudiar de madrugada no es indisciplina: es aritmética.',
   comoLeer:
-    'Las palabras subrayadas en amarillo abren una capa con el documento, la norma o el número que sostiene esa frase. La crónica se lee completa sin abrir ninguna.',
+    'Las palabras resaltadas abren una capa con el documento, la norma o el número que sostiene esa frase. La crónica se lee completa sin abrir ninguna.',
 }

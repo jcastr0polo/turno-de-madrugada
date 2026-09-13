@@ -36,7 +36,7 @@ function Nodo({
         height={NODO.alto}
         rx={3}
         fill="var(--color-fondo)"
-        stroke="var(--color-borde)"
+        stroke="var(--color-trazo)"
         strokeWidth={1}
         strokeDasharray={punteado ? '4 5' : undefined}
       />
@@ -47,7 +47,7 @@ function Nodo({
         dominantBaseline="central"
         fontFamily="var(--font-mono)"
         fontSize={13}
-        fill="var(--color-apagado)"
+        fill="var(--color-texto)"
       >
         {texto}
       </text>
@@ -90,7 +90,7 @@ export function MapaRecorridos() {
             y1={CENTRO.y}
             x2={POSICIONES[id].x}
             y2={POSICIONES[id].y}
-            stroke="var(--color-borde)"
+            stroke="var(--color-trazo)"
             strokeWidth={1}
           />
         ))}
@@ -103,7 +103,7 @@ export function MapaRecorridos() {
             y1={CENTRO.y}
             x2={POSICIONES[satelite.id].x}
             y2={POSICIONES[satelite.id].y}
-            stroke="var(--color-borde)"
+            stroke="var(--color-trazo)"
             strokeWidth={1}
             strokeDasharray="5 6"
           />

@@ -7,14 +7,14 @@ import { Texto } from './Texto'
  */
 export function Cronica() {
   return (
-    <article className="px-5 py-16 sm:px-8 md:py-24">
-      <div className="mx-auto max-w-medida">
+    <article id="cronica" className="scroll-mt-8 max-w-medida py-14 md:py-16">
+      <div>
         {cronica.bloques.map((bloque, indice) => (
           <section
             key={bloque.id}
             id={bloque.id}
             aria-labelledby={`${bloque.id}-antetitulo`}
-            className={indice > 0 ? 'mt-16 border-t border-borde pt-16 md:mt-20 md:pt-20' : ''}
+            className={indice > 0 ? 'mt-14 border-t border-borde pt-14 md:mt-16 md:pt-16' : ''}
           >
             <h2 id={`${bloque.id}-antetitulo`} className="font-mono text-meta tracking-[0.12em] uppercase">
               <span className="text-acento">{bloque.antetitulo.marca}</span>
@@ -61,7 +61,7 @@ export function Cronica() {
         ))}
 
         {/* Reportería abierta y anunciada en el propio texto. */}
-        <div className="mt-16 border border-acento/40 bg-superficie p-5 md:mt-20">
+        <div className="mt-14 rounded-lg border border-acento/40 bg-superficie p-5 md:mt-16">
           <p className="font-mono text-meta tracking-[0.12em] text-acento uppercase">
             [PENDIENTE DE REPORTERÍA]
           </p>

@@ -33,7 +33,7 @@ export function Encuesta() {
   return (
     <div>
       <fieldset className="border-0 p-0">
-        <legend className="font-titular text-lg leading-snug font-medium text-balance">
+        <legend className="font-titular text-lg leading-snug font-semibold text-balance">
           {encuesta.pregunta}
         </legend>
 
@@ -47,7 +47,7 @@ export function Encuesta() {
               <li key={opcion.id}>
                 {elegida ? (
                   <div
-                    className="relative overflow-hidden border border-borde bg-fondo px-4 py-3"
+                    className="relative overflow-hidden rounded-md border border-borde bg-superficie px-4 py-3"
                     aria-describedby={`${idBase}-aviso`}
                   >
                     <div
@@ -71,7 +71,7 @@ export function Encuesta() {
                   <button
                     type="button"
                     onClick={() => registrar(opcion.id)}
-                    className="w-full border border-borde bg-fondo px-4 py-3 text-left text-[0.9375rem] text-apagado transition-colors hover:border-acento hover:text-texto"
+                    className="w-full rounded-md border border-borde bg-superficie px-4 py-3 text-left text-[0.9375rem] text-apagado transition-colors hover:border-acento hover:text-texto"
                   >
                     {opcion.etiqueta}
                   </button>

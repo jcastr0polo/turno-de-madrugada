@@ -13,7 +13,7 @@ const rotuloConsentimiento: Record<Consentimiento, string> = {
 /** Tabla pública de fuentes: qué aportó cada una, cómo se contrastó y con qué consentimiento. */
 export function ComoSeHizo() {
   return (
-    <div className="-mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0">
+    <div className="overflow-x-auto">
       <table className="w-full min-w-[44rem] border-collapse text-left">
         <caption className="sr-only">
           Fuentes utilizadas en la crónica, con su aporte, el contraste realizado y el estado del
@@ -37,7 +37,7 @@ export function ComoSeHizo() {
             <tr key={fila.id} className="border-b border-borde align-top">
               <th
                 scope="row"
-                className="py-5 pr-6 text-[0.9375rem] leading-[1.6] font-medium text-texto"
+                className="py-5 pr-6 text-[0.9375rem] leading-[1.6] font-normal text-texto"
               >
                 {fila.fuente}
               </th>

@@ -24,12 +24,55 @@ que el sitio enlaza y describe sin repetirlo.
 | Framework | Next.js 16, App Router, Server Components por defecto |
 | Lenguaje | TypeScript |
 | Estilos | Tailwind CSS v4, tokens en `@theme` dentro de `app/globals.css` |
+| Referencia de diseño | DevSpace de Cruip: raíl fijo, columna de lectura y barra lateral |
 | Tipografías | `next/font` (Inter Tight, Inter, JetBrains Mono), autoalojadas |
 | Dependencias de UI | Ninguna |
 
-Solo tres componentes llevan `"use client"`: el proveedor de capas, el
-disparador y el panel, más la encuesta y el muro. Todo lo demás se renderiza en
-el servidor, incluido el contenido de las cinco capas.
+Llevan `"use client"` el proveedor de capas, el disparador, el panel, el índice
+de capas de la barra lateral, el raíl de navegación, la encuesta y el muro. Todo
+lo demás se renderiza en el servidor, incluido el contenido de las cinco capas.
+
+### Composición
+
+Tres zonas, tomadas de la lógica de DevSpace. Nada se centra:
+
+```
+┌────┬──────────────────────┬────────────┐
+│    │ 3:47 a. m.           │            │
+│ CR │ El turno de...       │  CAPAS     │
+│ PA │                      │  · Glosario│
+│ EP │ La una de la mañana  │  · Datos   │
+│ MA │ A esta hora la casa  │  · ...     │
+│ FU │ por fin está callada │────────────│
+│ AY │ ...                  │  EPISODIO  │
+│    │                      │────────────│
+│    │                      │ 106 123 155│
+└────┴──────────────────────┴────────────┘
+ raíl      columna 38rem      barra
+```
+
+El raíl marca la sección visible con una línea de acento. La barra da acceso no
+lineal a las capas, para quien no quiera cazarlas dentro del texto.
+
+### Paleta
+
+| Token | Valor | Uso |
+|---|---|---|
+| `--color-fondo` | `#0A0F1A` | Fondo |
+| `--color-superficie` | `#131A28` | Fichas y panel |
+| `--color-borde` | `#1E293B` | Bordes decorativos |
+| `--color-texto` | `#E2E8F0` | Texto principal |
+| `--color-apagado` | `#94A3B8` | Texto secundario (7,5:1) |
+| `--color-acento` | `#38BDF8` | Única nota de color (9:1) |
+| `--color-trazo` | `#64748B` | Trazo del mapa (4:1) |
+
+El mapa tiene su propio token a propósito: es contenido con significado, así que
+sus trazos deben superar 3:1 (WCAG 1.4.11), a diferencia de los bordes
+decorativos de las fichas, que sí deben desaparecer.
+
+El resaltador no puede ser un bloque rotado con `::before`, porque las frases
+marcadas parten en varias líneas. Se resuelve con un degradado de fondo y
+`box-decoration-break: clone`, que sigue al texto en cada línea.
 
 ## Arrancar en local
 
@@ -124,7 +167,7 @@ Un enlace interno roto no llega a producción en silencio.
 
 ## Accesibilidad
 
-- Modo oscuro único, contraste AA o superior sobre `#0A0D12`.
+- Modo oscuro único, contraste AA o superior sobre `#0A0F1A`.
 - Cuerpo a 18px con interlineado 1.75; nada por debajo de 17px.
 - Panel de capas con `role="dialog"`, `aria-modal`, trampa de foco, cierre con
   Escape, clic fuera y botón visible. Al cerrar, el foco vuelve a la palabra que
@@ -134,6 +177,21 @@ Un enlace interno roto no llega a producción en silencio.
   tabla con `caption` y encabezados con `scope`.
 - `prefers-reduced-motion` respetado.
 - Sin `localStorage` y sin dependencias de UI externas.
+
+## Medición
+
+Con el build de producción, no en desarrollo:
+
+| | Móvil | Escritorio |
+|---|---|---|
+| Rendimiento | 98 | 100 |
+| Accesibilidad | 100 | 100 |
+| Buenas prácticas | 100 | 100 |
+| SEO | 100 | 100 |
+
+Se pide un solo peso por familia tipográfica: así Google sirve instancias
+estáticas en lugar de las fuentes variables completas, y el total baja de 115 KB
+a 68 KB. Es lo que más mueve el mayor elemento visible en conexiones lentas.
 
 ## Cobertura responsable
 

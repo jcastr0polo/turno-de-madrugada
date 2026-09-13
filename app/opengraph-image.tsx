@@ -18,9 +18,9 @@ export default function Og() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          backgroundColor: '#0A0D12',
+          backgroundColor: '#0A0F1A',
           padding: '72px 80px',
-          borderTop: '10px solid #E8F53F',
+          borderTop: '10px solid #38BDF8',
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -30,12 +30,12 @@ export default function Og() {
               fontSize: 24,
               letterSpacing: 4,
               textTransform: 'uppercase',
-              color: '#97A2B5',
+              color: '#94A3B8',
             }}
           >
             {sitio.serie}
           </div>
-          <div style={{ display: 'flex', marginTop: 36, fontSize: 56, color: '#E8F53F' }}>
+          <div style={{ display: 'flex', marginTop: 36, fontSize: 56, color: '#38BDF8' }}>
             {sitio.hora}
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function Og() {
             fontSize: 84,
             fontWeight: 700,
             lineHeight: 1.08,
-            color: '#E7EAF0',
+            color: '#E2E8F0',
             letterSpacing: -2,
           }}
         >
@@ -55,8 +55,8 @@ export default function Og() {
           <span
             style={{
               display: 'flex',
-              backgroundColor: '#E8F53F',
-              color: '#0A0D12',
+              backgroundColor: '#38BDF8',
+              color: '#0A0F1A',
               padding: '0 12px',
             }}
           >
@@ -70,13 +70,13 @@ export default function Og() {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'flex-end',
-            borderTop: '1px solid #1E2430',
+            borderTop: '1px solid #1E293B',
             paddingTop: 28,
             fontSize: 26,
           }}
         >
-          <div style={{ display: 'flex', color: '#E7EAF0' }}>{sitio.autora}</div>
-          <div style={{ display: 'flex', color: '#97A2B5' }}>
+          <div style={{ display: 'flex', color: '#E2E8F0' }}>{sitio.autora}</div>
+          <div style={{ display: 'flex', color: '#94A3B8' }}>
             {sitio.asignatura} · {sitio.institucion}
           </div>
         </div>
