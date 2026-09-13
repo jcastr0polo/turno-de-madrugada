@@ -63,12 +63,9 @@ export function Cronica() {
         {/* Reportería abierta y anunciada en el propio texto. */}
         <div className="mt-14 rounded-lg border border-acento/40 bg-superficie p-5 md:mt-16">
           <p className="font-mono text-meta tracking-[0.12em] text-acento uppercase">
-            [PENDIENTE DE REPORTERÍA]
-          </p>
-          <p className="mt-3 font-titular text-lg font-semibold">
             {cronica.actualizacionPendiente.titulo}
           </p>
-          <p className="mt-2 text-[0.9375rem] leading-[1.7] text-apagado">
+          <p className="mt-3 text-[0.9375rem] leading-[1.7] text-apagado">
             {cronica.actualizacionPendiente.texto}
           </p>
         </div>

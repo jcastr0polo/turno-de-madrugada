@@ -124,6 +124,34 @@ Todo el texto vive en `content/`, separado del maquetado y tipado en
 Incluida la voz del sitio: rótulos de sección, entradas, copia de la barra
 lateral y leyenda del mapa. No vive en los componentes porque es contenido.
 
+### Qué es el nodo y qué es el entregable
+
+La pieza publicada y el trabajo académico son dos cosas distintas, y mezclarlas
+le hace daño a las dos. El nodo es periodismo; el entregable demuestra el
+método a un evaluador. **Un lector necesita navegar, no ver los planos.**
+
+Vive en `/anexos`, fuera de buscadores y sin enlace desde el nodo:
+
+| Pieza | Por qué no está en el nodo |
+|---|---|
+| Mapa rizomático de la estructura | Es documentación de arquitectura. Un lector no necesita un diagrama con sus propios nodos rotulados. |
+| Matriz de fuentes con consentimientos | Publicar una nota de método es periodismo; publicar el papeleo de cumplimiento, no. |
+
+Lo que sí quedó en el nodo, reescrito:
+
+- La tabla de cuatro columnas se convirtió en **lista pública de documentos**:
+  qué sostiene cada papel y dónde descargarlo. Sin contraste ni consentimiento.
+- La firma académica salió de la cabecera y del pie. El nombre, la ciudad y la
+  fecha se quedan; la asignatura y la institución son portada del entregable.
+- Fuera el vocabulario de taller: ni `[PENDIENTE DE REPORTERÍA]`, ni insignias
+  de `Verificado`, ni "abre la capa" en los textos que solo oye un lector de
+  pantalla. La reportería abierta se anuncia como **Actualización**, que es
+  como se dice en un medio.
+- Los rótulos de las capas venían de la taxonomía del encargo. "Datos
+  verificados" y "Método de verificación" pasaron a **La cifra** y **El
+  método**: un lector no navega por verificación fáctica, navega por lo que va
+  a encontrar.
+
 ### Regla editorial
 
 **La página no se explica a sí misma.** Cada línea avanza el argumento, nombra

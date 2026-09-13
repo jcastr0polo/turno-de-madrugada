@@ -130,7 +130,7 @@ export function Panel({
             className="shrink-0 rounded-md border border-borde px-3 py-2 font-mono text-meta text-apagado transition-colors hover:border-acento hover:text-texto"
           >
             Cerrar
-            <span className="sr-only"> la capa complementaria</span>
+            <span className="sr-only"> esta nota</span>
           </button>
         </div>
 

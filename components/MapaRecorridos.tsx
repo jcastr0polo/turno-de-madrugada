@@ -80,7 +80,7 @@ export function MapaRecorridos() {
         aria-labelledby="mapa-titulo mapa-desc"
         className="h-auto w-full max-w-[54rem]"
       >
-        <title id="mapa-titulo">{sitio.secciones.mapa.titulo}</title>
+        <title id="mapa-titulo">Mapa rizomático de la estructura hipertextual</title>
         <desc id="mapa-desc">{descripcion}</desc>
 
         {/* Líneas continuas hacia las cinco capas. */}

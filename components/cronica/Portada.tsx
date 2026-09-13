@@ -23,15 +23,12 @@ export function Portada() {
         {sitio.bajada}
       </p>
 
-      <div className="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-2 border-t border-borde pt-5">
+      <div className="mt-8 border-t border-borde pt-5">
         <p className="font-titular text-base font-semibold">{sitio.autora}</p>
-        <p className="text-[0.9375rem] text-apagado">
-          {sitio.asignatura} · {sitio.institucion}
+        <p className="mt-3 font-mono text-meta tracking-[0.08em] text-apagado uppercase">
+          {sitio.metadatos.join(' · ')}
         </p>
       </div>
-      <p className="mt-3 font-mono text-meta tracking-[0.08em] text-apagado uppercase">
-        {sitio.metadatos.join(' · ')}
-      </p>
     </header>
   )
 }

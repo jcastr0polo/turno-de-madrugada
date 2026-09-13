@@ -167,8 +167,8 @@ export const cronica: Cronica = {
   // Reportería anunciada en el propio texto y todavía abierta. Se declara como
   // pendiente en lugar de rellenarse: cuando llegue la respuesta, se escribe aquí.
   actualizacionPendiente: {
-    titulo: 'Respuesta de Bienestar Universitario CUN',
+    titulo: 'Actualización',
     texto:
-      'Derecho de petición radicado el 7 de septiembre de 2026 sobre tiempos de espera, protocolo de crisis fuera del horario de atención y publicación del número que atiende de madrugada. El término legal de respuesta es de quince días hábiles. La respuesta se publicará en este mismo lugar.',
+      'Bienestar Universitario todavía no ha respondido. La solicitud se radicó el 7 de septiembre de 2026 y el término legal es de quince días hábiles. Cuando llegue la respuesta se publicará aquí.',
   },
 }

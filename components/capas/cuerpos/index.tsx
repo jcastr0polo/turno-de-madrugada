@@ -4,25 +4,6 @@ import { CitaFuente } from './CitaFuente'
 const parrafo = 'text-[1rem] leading-[1.7] text-texto'
 const secundario = 'text-[0.9375rem] leading-[1.7] text-apagado'
 
-/** Etiqueta de estado. Un dato por confirmar nunca se presenta como verificado. */
-function Estado({ estado }: { estado: 'verificado' | 'por-confirmar' | 'pendiente' }) {
-  const rotulo = {
-    verificado: 'Verificado',
-    'por-confirmar': 'Pendiente de confirmar vigencia',
-    pendiente: '[PENDIENTE DE REPORTERÍA]',
-  }[estado]
-
-  return (
-    <span
-      className={`inline-block rounded-md border px-2 py-1 font-mono text-meta ${
-        estado === 'verificado' ? 'border-borde text-apagado' : 'border-acento text-acento'
-      }`}
-    >
-      {rotulo}
-    </span>
-  )
-}
-
 export function CuerpoGlosario() {
   const capa = capas.glosario
   if (capa.id !== 'glosario') return null
@@ -69,9 +50,6 @@ export function CuerpoDatos() {
             <p className={`mt-2 ${secundario}`}>{dato.lectura}</p>
           </div>
 
-          <div className="mt-5">
-            <Estado estado={dato.estado} />
-          </div>
           <CitaFuente id={dato.fuente} />
         </div>
       ))}
@@ -138,9 +116,6 @@ export function CuerpoMetodo() {
 
       <div data-ancla="radicado" className="rounded-lg border border-borde bg-fondo p-4">
         <p className={secundario}>{capa.nota}</p>
-        <div className="mt-3">
-          <Estado estado="pendiente" />
-        </div>
       </div>
     </div>
   )
@@ -172,11 +147,6 @@ export function CuerpoAyuda() {
       {capa.notas.map((nota) => (
         <div key={nota.id} data-ancla={nota.id} className="border-l-2 border-borde pl-4">
           <p className={secundario}>{nota.texto}</p>
-          {nota.estado !== 'verificado' && (
-            <div className="mt-3">
-              <Estado estado={nota.estado} />
-            </div>
-          )}
         </div>
       ))}
 

@@ -8,6 +8,7 @@ import type { FilaTransparencia, Fuente } from './types'
 export const fuentes: Record<string, Fuente> = {
   dane: {
     id: 'dane',
+    aporte: 'Cuánto vale el trabajo doméstico y de cuidado no remunerado en Colombia.',
     entidad: 'DANE',
     documento: 'Cuenta Satélite de Economía del Cuidado',
     detalle: 'Resultados provisionales 2024, presentados en julio de 2026',
@@ -16,6 +17,7 @@ export const fuentes: Record<string, Fuente> = {
   },
   minsaludDirectorio: {
     id: 'minsaludDirectorio',
+    aporte: 'Qué departamentos tienen línea territorial de salud mental y cuáles no.',
     entidad: 'Ministerio de Salud y Protección Social',
     documento: 'Directorio nacional de líneas de atención en salud mental',
     detalle: 'Versión de agosto de 2025',
@@ -24,6 +26,7 @@ export const fuentes: Record<string, Fuente> = {
   },
   minsaludLinea106: {
     id: 'minsaludLinea106',
+    aporte: 'Qué es la línea 106 y en qué horario atiende.',
     entidad: 'Ministerio de Salud y Protección Social',
     documento: 'Línea 106',
     url: 'https://www.minsalud.gov.co/salud/publica/salud-mental/Paginas/linea-106.aspx',
@@ -31,27 +34,31 @@ export const fuentes: Record<string, Fuente> = {
   },
   ley1413: {
     id: 'ley1413',
+    aporte: 'La obligación del Estado de medir el trabajo de cuidado.',
     entidad: 'Congreso de la República de Colombia',
     documento: 'Ley 1413 de 2010',
     tipo: 'normativa',
   },
   ley1616: {
     id: 'ley1616',
+    aporte: 'La salud mental como derecho y los deberes del entorno educativo.',
     entidad: 'Congreso de la República de Colombia',
     documento: 'Ley 1616 de 2013',
     tipo: 'normativa',
   },
   ley2466: {
     id: 'ley2466',
+    aporte: 'A qué hora empieza la jornada nocturna y qué recargo genera.',
     entidad: 'Congreso de la República de Colombia',
     documento: 'Ley 2466 de 2025',
     tipo: 'normativa',
   },
   santaMarta: {
     id: 'santaMarta',
+    aporte: 'La oferta local de escucha en Santa Marta.',
     entidad: 'Alcaldía Distrital de Santa Marta',
     documento: 'Boletín institucional sobre Centros de Escucha',
-    detalle: '2024, pendiente confirmar vigencia',
+    detalle: 'Boletín de 2024',
     url: 'https://www.santamarta.gov.co/sala-prensa/noticias/alcaldia-distrital-de-santa-marta-inicia-la-semana-de-la-salud-mental',
     tipo: 'institucional',
   },

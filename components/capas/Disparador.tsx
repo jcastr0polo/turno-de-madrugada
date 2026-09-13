@@ -39,7 +39,7 @@ export function Disparador({
       }}
     >
       {children}
-      <span className="sr-only"> — abre la capa {etiqueta}</span>
+      <span className="sr-only"> (ver {etiqueta})</span>
     </button>
   )
 }

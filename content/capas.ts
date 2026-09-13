@@ -19,7 +19,7 @@ export const capas: Record<CapaId, Capa> = {
 
   datos: {
     id: 'datos',
-    etiqueta: 'Datos verificados',
+    etiqueta: 'La cifra',
     titulo: '340,5 billones de pesos',
     sumario: 'Cuánto vale el trabajo de cuidado no remunerado según la cuenta oficial.',
     datos: [
@@ -47,7 +47,7 @@ export const capas: Record<CapaId, Capa> = {
 
   contexto: {
     id: 'contexto',
-    etiqueta: 'Contexto normativo',
+    etiqueta: 'Las leyes',
     titulo: 'Tres leyes que no se hablan',
     sumario: 'La norma que manda medir, la que paga la noche y la que reconoce la salud mental.',
     normas: [
@@ -79,7 +79,7 @@ export const capas: Record<CapaId, Capa> = {
 
   metodo: {
     id: 'metodo',
-    etiqueta: 'Método de verificación',
+    etiqueta: 'El método',
     titulo: 'Cómo se verificó esto',
     sumario: 'Las dos reglas que separan el testimonio de la afirmación general.',
     intro: 'Dos reglas gobiernan el texto.',
@@ -102,7 +102,7 @@ export const capas: Record<CapaId, Capa> = {
 
   ayuda: {
     id: 'ayuda',
-    etiqueta: 'Rutas de ayuda',
+    etiqueta: 'Dónde llamar',
     titulo: 'Líneas abiertas ahora',
     sumario: 'Los números que atienden a esta hora, y la casilla que el Magdalena tiene vacía.',
     lineas: [

@@ -25,17 +25,18 @@ export const sitio: Sitio = {
 
   // Enuncia el pacto de verificación de la pieza. Que además enseñe dónde se
   // puede entrar es consecuencia, no propósito.
-  rotuloVerificacion: 'Verificación',
+  rotuloVerificacion: 'Nota de la autora',
   verificacion: 'Lo que no es mío está marcado. Detrás de cada marca está el documento que lo sostiene.',
 
   navegacion: [
     { id: 'cronica', etiqueta: 'Crónica' },
     { id: 'participacion', etiqueta: 'Turnos' },
     { id: 'episodio', etiqueta: 'Episodio' },
-    { id: 'mapa', etiqueta: 'Mapa' },
-    { id: 'como-se-hizo', etiqueta: 'Fuentes' },
+    { id: 'fuentes', etiqueta: 'Fuentes' },
     { id: 'ayuda', etiqueta: 'Ayuda' },
   ],
+
+  creditos: 'Turno de madrugada · Leidy Carolina Granados Celis · Santa Marta, Magdalena',
 
   secciones: {
     participacion: {
@@ -44,19 +45,15 @@ export const sitio: Sitio = {
       entrada: 'Esta cuenta es de una sola persona. Faltan las demás.',
     },
     episodio: {
-      rotulo: 'Segunda pieza',
+      rotulo: 'Segunda entrega',
       titulo: 'El mismo día, contado en voz',
       entrada: 'Hay cosas de esa hora que no caben en un documento público.',
     },
-    mapa: {
-      rotulo: 'Recorridos',
-      titulo: 'Mapa de recorridos',
-      entrada: 'Una crónica y siete desvíos. Ninguno es obligatorio.',
-    },
     fuentes: {
-      rotulo: 'Transparencia',
-      titulo: 'Cómo se hizo',
-      entrada: 'Quién aportó qué, cómo se contrastó y qué sigue pendiente.',
+      rotulo: 'Documentos',
+      titulo: 'Lo que hay detrás',
+      entrada:
+        'Todo lo que esta crónica afirma sobre el país sale de estos papeles. Están abiertos: se pueden descargar y comprobar.',
     },
     ayuda: {
       rotulo: 'Si lo necesitas',
@@ -66,11 +63,11 @@ export const sitio: Sitio = {
 
   barra: {
     capas: {
-      titulo: 'Las cinco capas',
-      entrada: 'Lo que sostiene cada afirmación del texto.',
+      titulo: 'Detrás del texto',
+      entrada: 'Lo que sostiene cada afirmación.',
     },
     episodio: {
-      titulo: 'Segunda pieza',
+      titulo: 'Segunda entrega',
       linea: 'La misma jornada, hora por hora, en voz.',
       enlace: 'Sobre el episodio',
     },
@@ -81,4 +78,14 @@ export const sitio: Sitio = {
 
   leyendaMapa:
     'Línea continua, las capas que abren desde una palabra del texto. Línea punteada, las piezas que acompañan a la crónica.',
+
+  // Material del entregable académico. No es el nodo: existe para capturarlo
+  // y pegarlo en el PDF, y va fuera de los buscadores.
+  anexo: {
+    titulo: 'Anexos del entregable',
+    entrada:
+      'Esta página no forma parte de la pieza publicada. Reúne el material que el entregable académico pide documentar y que en el nodo no tendría lector.',
+    mapa: 'Sección 2 · Mapa rizomático de la estructura hipertextual',
+    matriz: 'Sección 4 · Matriz de seguimiento de fuentes',
+  },
 }

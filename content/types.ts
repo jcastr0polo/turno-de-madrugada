@@ -137,6 +137,9 @@ export interface Fuente {
   entidad: string
   documento: string
   detalle?: string
+  /** Qué sostiene esta fuente en la crónica. Se publica; el contraste y el
+   *  consentimiento no: eso es materia del entregable académico. */
+  aporte?: string
   /** Sin URL cuando no hay enlace estable: se cita por entidad, número y año. */
   url?: string
   tipo: 'documental' | 'normativa' | 'institucional' | 'testimonial'
@@ -201,7 +204,7 @@ export interface CopiaSeccion {
 export interface Secciones {
   participacion: CopiaSeccion
   episodio: CopiaSeccion
-  mapa: CopiaSeccion
+  /** Lista pública de documentos. La matriz con consentimientos es del anexo. */
   fuentes: CopiaSeccion
   ayuda: CopiaSeccion
 }
@@ -230,8 +233,13 @@ export interface Sitio {
   /** La línea que abre la lectura. Enuncia el pacto de verificación. */
   verificacion: string
   navegacion: { id: string; etiqueta: string }[]
+  /** Línea de créditos del pie. Sin asignatura ni institución: eso es portada
+   *  del entregable, no firma de una pieza publicada. */
+  creditos: string
   secciones: Secciones
   barra: CopiaBarra
-  /** Leyenda del mapa. Un pie de figura es legítimo; un manual, no. */
+  /** Leyenda del mapa rizomático. Solo se usa en el anexo del entregable. */
   leyendaMapa: string
+  /** Copia del anexo: no forma parte del nodo publicado. */
+  anexo: { titulo: string; entrada: string; mapa: string; matriz: string }
 }

@@ -11,9 +11,8 @@ import {
 import { Verificacion } from '@/components/cronica/Verificacion'
 import { Cronica } from '@/components/cronica/Cronica'
 import { Portada } from '@/components/cronica/Portada'
-import { ComoSeHizo } from '@/components/ComoSeHizo'
+import { FuentesPublicas } from '@/components/FuentesPublicas'
 import { TarjetaEpisodio } from '@/components/Episodio'
-import { MapaRecorridos } from '@/components/MapaRecorridos'
 import { Navegacion } from '@/components/Navegacion'
 import { RutasDeAyuda } from '@/components/RutasDeAyuda'
 import { Encuesta } from '@/components/participacion/Encuesta'
@@ -88,31 +87,19 @@ export default function Pagina() {
               </Seccion>
 
               <Seccion
-                id="mapa"
-                rotulo={sitio.secciones.mapa.rotulo}
-                titulo={sitio.secciones.mapa.titulo}
-                descripcion={sitio.secciones.mapa.entrada}
-                ancho="ancho"
-              >
-                <MapaRecorridos />
-              </Seccion>
-
-              <Seccion
-                id="como-se-hizo"
+                id="fuentes"
                 rotulo={sitio.secciones.fuentes.rotulo}
                 titulo={sitio.secciones.fuentes.titulo}
                 descripcion={sitio.secciones.fuentes.entrada}
-                ancho="ancho"
               >
-                <ComoSeHizo />
+                <FuentesPublicas />
               </Seccion>
 
               <RutasDeAyuda />
 
               <footer className="border-t border-borde py-8">
                 <p className="font-mono text-meta leading-relaxed text-apagado">
-                  {sitio.serie} · {sitio.autora} · {sitio.asignatura}, {sitio.institucion} ·{' '}
-                  {sitio.ciudad}
+                  {sitio.creditos}
                 </p>
               </footer>
             </div>
