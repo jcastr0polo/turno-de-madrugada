@@ -45,6 +45,13 @@ export default function Pagina() {
         ayuda: <CuerpoAyuda />,
       }}
     >
+      <a
+        href="#cronica"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:border focus:border-acento focus:bg-fondo focus:px-4 focus:py-3 focus:font-mono focus:text-meta"
+      >
+        Saltar a la crónica
+      </a>
+
       {/* Tres zonas: raíl de navegación, columna de lectura y barra de
           recursos. La composición no se centra: se ancla al raíl. */}
       <div className="mx-auto max-w-[80rem]">

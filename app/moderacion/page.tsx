@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import { COOKIE_SESION, claveConfigurada, sesionValida } from '@/lib/moderacion'
 import { supabase } from '@/lib/supabase'
+import { encuesta } from '@/content/participacion'
 import { cambiarEstado, entrar, salir } from './acciones'
 
 export const metadata: Metadata = {
@@ -24,6 +25,62 @@ const ESTADOS = [
   { clave: 'publicado', titulo: 'En el muro', vacio: 'Todavía no has publicado ninguno.' },
   { clave: 'oculto', titulo: 'Retirados', vacio: 'No has retirado ninguno.' },
 ] as const
+
+/**
+ * Resultados de la encuesta. Aquí, a diferencia del muro público, se enseña
+ * siempre el número absoluto junto al porcentaje: quien modera necesita saber
+ * si un 100 % viene de un voto o de doscientos.
+ */
+function Encuesta({ votos }: { votos: string[] }) {
+  const total = votos.length
+  const conteo = Object.fromEntries(
+    encuesta.opciones.map((opcion) => [opcion.id, votos.filter((v) => v === opcion.id).length]),
+  ) as Record<string, number>
+
+  const mayor = Math.max(1, ...Object.values(conteo))
+
+  return (
+    <section className="border-b border-borde py-10">
+      <h2 className="font-mono text-meta tracking-[0.12em] text-acento uppercase">
+        La encuesta · {total} {total === 1 ? 'respuesta' : 'respuestas'}
+      </h2>
+      <p className="mt-3 max-w-medida text-[0.9375rem] text-apagado">{encuesta.pregunta}</p>
+
+      {total === 0 ? (
+        <p className="mt-6 text-[0.9375rem] text-apagado">Todavía no ha votado nadie.</p>
+      ) : (
+        <ul className="mt-6 max-w-lectura space-y-3">
+          {encuesta.opciones.map((opcion) => {
+            const cuenta = conteo[opcion.id]
+            const porcentaje = Math.round((cuenta / total) * 100)
+            return (
+              <li
+                key={opcion.id}
+                className="relative overflow-hidden rounded-md border border-borde bg-superficie px-4 py-3"
+              >
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-y-0 left-0 bg-acento/20"
+                  style={{ width: `${(cuenta / mayor) * 100}%` }}
+                />
+                <div className="relative flex items-baseline justify-between gap-4">
+                  <span className="text-[0.9375rem]">{opcion.etiqueta}</span>
+                  <span className="font-mono text-meta whitespace-nowrap">
+                    <span className="text-acento">{porcentaje} %</span>
+                    <span className="text-apagado">
+                      {' '}
+                      · {cuenta} de {total}
+                    </span>
+                  </span>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </section>
+  )
+}
 
 function fecha(iso: string) {
   return new Date(iso).toLocaleString('es-CO', {
@@ -121,14 +178,18 @@ export default async function Moderacion({
   }
 
   const bd = supabase()
-  const { data } = bd
-    ? await bd
-        .from('madrugada_aportes')
-        .select('id, alias, texto, estado, creado_en')
-        .order('creado_en', { ascending: false })
-    : { data: [] }
+  const [respuestaAportes, respuestaVotos] = bd
+    ? await Promise.all([
+        bd
+          .from('madrugada_aportes')
+          .select('id, alias, texto, estado, creado_en')
+          .order('creado_en', { ascending: false }),
+        bd.from('madrugada_votos').select('opcion'),
+      ])
+    : [{ data: [] }, { data: [] }]
 
-  const aportes = (data ?? []) as Aporte[]
+  const aportes = (respuestaAportes.data ?? []) as Aporte[]
+  const votos = ((respuestaVotos.data ?? []) as { opcion: string }[]).map((v) => v.opcion)
 
   return (
     <main className="mx-auto max-w-ancho px-5 py-14 sm:px-8">
@@ -151,6 +212,8 @@ export default async function Moderacion({
           </button>
         </form>
       </header>
+
+      <Encuesta votos={votos} />
 
       {ESTADOS.map((grupo) => {
         const lista = aportes.filter((a) => a.estado === grupo.clave)
