@@ -164,11 +164,4 @@ export const cronica: Cronica = {
       ],
     },
   ],
-  // Reportería anunciada en el propio texto y todavía abierta. Se declara como
-  // pendiente en lugar de rellenarse: cuando llegue la respuesta, se escribe aquí.
-  actualizacionPendiente: {
-    titulo: 'Actualización',
-    texto:
-      'Bienestar Universitario todavía no ha respondido. La solicitud se radicó el 7 de septiembre de 2026 y el término legal es de quince días hábiles. Cuando llegue la respuesta se publicará aquí.',
-  },
 }

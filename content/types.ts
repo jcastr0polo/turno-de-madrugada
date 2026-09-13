@@ -60,8 +60,6 @@ export interface BloqueCronica {
 
 export interface Cronica {
   bloques: BloqueCronica[]
-  /** Reportería en curso, anunciada en el propio texto y declarada aquí como pendiente. */
-  actualizacionPendiente: { titulo: string; texto: string }
 }
 
 /* ------------------------------------------------------------------ */
