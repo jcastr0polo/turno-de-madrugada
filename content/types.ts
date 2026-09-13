@@ -175,12 +175,23 @@ export interface Encuesta {
   id: string
   pregunta: string
   opciones: { id: string; etiqueta: string }[]
+  /** Con base de datos conectada. */
   aviso: string
+  /** Sin base de datos: los votos no salen del navegador. Decirlo es obligado. */
+  avisoSesion: string
 }
 
 export interface Muro {
   invitacion: string
+  /** Con base de datos conectada. */
   aviso: string
+  /** Sin base de datos: nada se guarda. */
+  avisoSesion: string
+  confirmacion: string
+  confirmacionDirecta: string
+  error: string
+  exceso: string
+  vacio: string
   marcadorAlias: string
   marcadorTexto: string
   maxCaracteres: number
