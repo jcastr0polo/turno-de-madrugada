@@ -296,6 +296,34 @@ minutos. El voto se identifica con una cookie `httpOnly` anónima. Los avisos
 que ve el lector cambian según haya base de datos o no: nunca se anuncia una
 permanencia que no existe.
 
+## Libro de Excel del entregable
+
+```bash
+npm run excel   # -> entregable/turno-de-madrugada-gestion.xlsx
+```
+
+Cuatro hojas: resumen, presupuesto, cronograma y tablero de KPI con el IEC.
+
+Las cifras viven en `scripts/excel/datos.mjs`, separadas del maquetado igual
+que el contenido del sitio. Nada está escrito a mano en el libro: los 65
+totales, porcentajes y el propio IEC son fórmulas vivas de Excel, enlazadas
+entre hojas. Cambiar una partida del presupuesto actualiza el IEC.
+
+**Las cifras del presupuesto son estimaciones pendientes de validar.** Son los
+equipos y los gastos reales de la autora; nadie más puede confirmarlas. El
+aviso está también dentro del libro, en amarillo.
+
+El IEC se calcula así:
+
+```
+Valor de impacto = Alcance x 1  +  Engagement x 5  +  Conversion x 20
+IEC              = Valor de impacto / Inversion total x 1.000
+```
+
+Los pesos están en `pesosIEC` y en celdas visibles del libro. Si en clase se
+enseñó otra fórmula, se sustituye la celda del IEC y el resto sigue
+calculando.
+
 ## Medición
 
 Con el build de producción, no en desarrollo:
