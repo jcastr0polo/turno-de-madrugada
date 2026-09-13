@@ -12,9 +12,11 @@ export const episodio: Episodio = {
   serie: 'Turno de madrugada',
   plataforma: 'Spotify',
   duracion: '9 minutos (estimados)',
+  // Qué se oye, no en qué se diferencia del texto: comparar formatos es hablar
+  // de la publicación en vez de hablar de la madrugada.
   aporta: [
-    'La jornada completa contada hora por hora, que en el texto solo se menciona.',
-    'La voz en primera persona: el cansancio se oye, no se describe.',
+    'La jornada entera, hora por hora.',
+    'El cansancio se oye. No hace falta describirlo.',
     'El ruido de la casa a esa hora, que ninguna cifra registra.',
   ],
   url: URL_EPISODIO,

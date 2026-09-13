@@ -13,14 +13,15 @@ export const encuesta: Encuesta = {
     { id: 'ratos-sueltos', etiqueta: 'Ratos sueltos entre una cosa y otra' },
     { id: 'ninguna', etiqueta: 'Todavía no la encuentro' },
   ],
-  aviso:
-    'Resultados de esta sesión en tu navegador. No se almacenan, no se envían y se pierden al recargar.',
+  aviso: 'Se cuenta aquí y ahora. Nada se guarda ni se envía.',
 }
 
 export const muro: Muro = {
   invitacion: 'Escribe en una o dos frases cuál es tu turno y qué haces en él.',
   aviso:
-    'Los aportes viven solo en esta sesión de tu navegador: no se guardan ni se publican para nadie más. No escribas datos que permitan identificarte. Si estás pasando por un momento difícil, las líneas de ayuda están al final de la página.',
+    'Lo que escribas vive solo en esta sesión: no se guarda ni se publica. No pongas datos que permitan identificarte. Si estás pasando por un momento difícil, las líneas de ayuda están al final.',
+  marcadorAlias: 'Cómo quieres firmar',
+  marcadorTexto: 'A qué hora estudias o trabajas, y qué haces en esa hora',
   maxCaracteres: 180,
   maxAlias: 24,
 }

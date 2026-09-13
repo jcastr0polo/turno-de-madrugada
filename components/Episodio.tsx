@@ -1,4 +1,5 @@
 import { episodio } from '@/content/episodio'
+import { sitio } from '@/content/sitio'
 
 /** Tarjeta de la segunda pieza de la serie. Enlaza el audio y dice qué aporta. */
 export function TarjetaEpisodio() {
@@ -13,14 +14,14 @@ export function TarjetaEpisodio() {
         <span aria-hidden="true" className="text-borde">
           ·
         </span>
-        <span className="text-acento">Segunda pieza de la serie</span>
+        <span className="text-acento">{sitio.secciones.episodio.rotulo}</span>
       </div>
 
       <h3 className="mt-5 font-titular text-2xl leading-tight font-semibold">{episodio.titulo}</h3>
 
       <div className="mt-6">
         <p className="font-mono text-meta tracking-[0.12em] text-acento uppercase">
-          Qué aporta que no está en el texto
+          En el audio
         </p>
         <ul className="mt-4 space-y-3">
           {episodio.aporta.map((punto) => (

@@ -121,6 +121,29 @@ Todo el texto vive en `content/`, separado del maquetado y tipado en
 | `content/episodio.ts` | Episodio de audio y su URL |
 | `content/participacion.ts` | Encuesta y muro |
 
+Incluida la voz del sitio: rótulos de sección, entradas, copia de la barra
+lateral y leyenda del mapa. No vive en los componentes porque es contenido.
+
+### Regla editorial
+
+**La página no se explica a sí misma.** Cada línea avanza el argumento, nombra
+algo o declara lo que el lector necesita saber. Ninguna describe la
+arquitectura, el soporte ni el funcionamiento de la interfaz: el manual de uso
+no es contenido.
+
+Por eso la línea que abre la lectura no dice "las palabras resaltadas abren una
+capa", sino:
+
+> Lo que no es mío está marcado. Detrás de cada marca está el documento que lo
+> sostiene.
+
+Enuncia el pacto de verificación de la pieza. Que además deje ver dónde se
+puede entrar es consecuencia, no propósito.
+
+Lo único que queda escrito en los componentes son dos mapeos de valores
+tipados —estados de consentimiento y de verificación— y los nombres accesibles
+de los landmarks. Eso sí es interfaz.
+
 ### Marcar una palabra que abra una capa
 
 Dentro de `contenido`, un objeto en lugar de una cadena:

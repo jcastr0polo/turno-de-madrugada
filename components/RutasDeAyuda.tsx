@@ -1,4 +1,5 @@
 import { capas } from '@/content/capas'
+import { sitio } from '@/content/sitio'
 
 /**
  * Bloque de cierre. Toda página termina con las rutas de ayuda: es la regla de
@@ -14,9 +15,11 @@ export function RutasDeAyuda() {
       aria-labelledby="ayuda-titulo"
       className="scroll-mt-8 border-t-2 border-t-acento py-14 md:py-20"
     >
-      <p className="font-mono text-meta tracking-[0.14em] text-acento uppercase">Si lo necesitas</p>
+      <p className="font-mono text-meta tracking-[0.14em] text-acento uppercase">
+        {sitio.secciones.ayuda.rotulo}
+      </p>
       <h2 id="ayuda-titulo" className="mt-3 font-titular text-2xl font-semibold sm:text-3xl">
-        Líneas abiertas ahora
+        {sitio.secciones.ayuda.titulo}
       </h2>
 
       <ul className="mt-10 grid gap-4 sm:grid-cols-3">

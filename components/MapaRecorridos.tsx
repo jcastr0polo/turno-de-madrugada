@@ -1,5 +1,6 @@
 import { capas, ordenCapas } from '@/content/capas'
 import { episodio } from '@/content/episodio'
+import { sitio } from '@/content/sitio'
 
 /** Geometría dibujada a mano. Sin librería de grafos: son nueve nodos fijos. */
 const CENTRO = { x: 400, y: 250, ancho: 220, alto: 66 }
@@ -79,7 +80,7 @@ export function MapaRecorridos() {
         aria-labelledby="mapa-titulo mapa-desc"
         className="h-auto w-full max-w-[54rem]"
       >
-        <title id="mapa-titulo">Mapa de recorridos de la crónica</title>
+        <title id="mapa-titulo">{sitio.secciones.mapa.titulo}</title>
         <desc id="mapa-desc">{descripcion}</desc>
 
         {/* Líneas continuas hacia las cinco capas. */}
@@ -147,9 +148,7 @@ export function MapaRecorridos() {
       </svg>
 
       <figcaption className="mt-6 max-w-medida text-[0.9375rem] leading-[1.7] text-apagado">
-        Línea continua: las cinco capas que se abren desde una palabra del texto y amplían lo que
-        esa frase afirma. Línea punteada: las piezas que acompañan a la crónica sin repetirla, el
-        episodio de audio y el muro de aportes.
+        {sitio.leyendaMapa}
       </figcaption>
     </figure>
   )

@@ -60,7 +60,7 @@ export function Muro() {
             autoComplete="off"
             onChange={(evento) => setAlias(evento.target.value)}
             className="mt-2 w-full rounded-md border border-borde bg-superficie px-4 py-3 text-[0.9375rem] text-texto placeholder:text-apagado/60"
-            placeholder="Cómo quieres firmar"
+            placeholder={muro.marcadorAlias}
           />
         </div>
 
@@ -77,7 +77,7 @@ export function Muro() {
             onChange={(evento) => setTexto(evento.target.value)}
             aria-describedby={`${idBase}-cuenta ${idBase}-aviso`}
             className="mt-2 w-full resize-y rounded-md border border-borde bg-superficie px-4 py-3 text-[0.9375rem] leading-[1.7] text-texto placeholder:text-apagado/60"
-            placeholder="A qué hora estudias o trabajas, y qué haces en esa hora"
+            placeholder={muro.marcadorTexto}
           />
           <p id={`${idBase}-cuenta`} className="mt-2 font-mono text-meta text-apagado">
             {restantes} caracteres restantes

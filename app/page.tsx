@@ -8,7 +8,7 @@ import {
   CuerpoGlosario,
   CuerpoMetodo,
 } from '@/components/capas/cuerpos'
-import { ComoLeer } from '@/components/cronica/ComoLeer'
+import { Verificacion } from '@/components/cronica/Verificacion'
 import { Cronica } from '@/components/cronica/Cronica'
 import { Portada } from '@/components/cronica/Portada'
 import { ComoSeHizo } from '@/components/ComoSeHizo'
@@ -50,12 +50,12 @@ export default function Pagina() {
           recursos. La composición no se centra: se ancla al raíl. */}
       <div className="mx-auto max-w-[80rem]">
         <div className="flex min-h-screen">
-          <Navegacion />
+          <Navegacion secciones={sitio.navegacion} />
 
           <main className="grow overflow-hidden px-5 sm:px-8">
             <div className="mx-auto flex w-full max-w-ancho flex-col">
               <Portada />
-              <ComoLeer />
+              <Verificacion />
 
               <div className="pb-4 md:flex md:gap-10">
                 <div className="grow">
@@ -66,9 +66,9 @@ export default function Pagina() {
 
               <Seccion
                 id="participacion"
-                rotulo="Participación"
-                titulo="La hora que nadie reclama"
-                descripcion="Dos preguntas abiertas al público. Nada de lo que escribas sale de tu navegador."
+                rotulo={sitio.secciones.participacion.rotulo}
+                titulo={sitio.secciones.participacion.titulo}
+                descripcion={sitio.secciones.participacion.entrada}
                 ancho="ancho"
               >
                 <div className="grid gap-12 lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)]">
@@ -79,9 +79,9 @@ export default function Pagina() {
 
               <Seccion
                 id="episodio"
-                rotulo="Segunda pieza"
-                titulo="El mismo día, contado en voz"
-                descripcion="El audio no repite la crónica: la completa con lo que el texto no puede sostener."
+                rotulo={sitio.secciones.episodio.rotulo}
+                titulo={sitio.secciones.episodio.titulo}
+                descripcion={sitio.secciones.episodio.entrada}
                 ancho="ancho"
               >
                 <TarjetaEpisodio />
@@ -89,9 +89,9 @@ export default function Pagina() {
 
               <Seccion
                 id="mapa"
-                rotulo="Arquitectura"
-                titulo="Mapa de recorridos"
-                descripcion="Cómo se conectan las piezas de esta publicación."
+                rotulo={sitio.secciones.mapa.rotulo}
+                titulo={sitio.secciones.mapa.titulo}
+                descripcion={sitio.secciones.mapa.entrada}
                 ancho="ancho"
               >
                 <MapaRecorridos />
@@ -99,9 +99,9 @@ export default function Pagina() {
 
               <Seccion
                 id="como-se-hizo"
-                rotulo="Transparencia"
-                titulo="Cómo se hizo"
-                descripcion={`Toda cifra de esta crónica tiene un documento detrás. ${sitio.ciudad}, ${sitio.asignatura}, ${sitio.institucion}.`}
+                rotulo={sitio.secciones.fuentes.rotulo}
+                titulo={sitio.secciones.fuentes.titulo}
+                descripcion={sitio.secciones.fuentes.entrada}
                 ancho="ancho"
               >
                 <ComoSeHizo />

@@ -178,8 +178,38 @@ export interface Encuesta {
 export interface Muro {
   invitacion: string
   aviso: string
+  marcadorAlias: string
+  marcadorTexto: string
   maxCaracteres: number
   maxAlias: number
+}
+
+/**
+ * Copia de una sección. `entrada` es la línea que sigue al título.
+ *
+ * Regla editorial de este archivo: la página no se explica a sí misma. Ninguna
+ * de estas líneas describe la arquitectura, el soporte ni el funcionamiento de
+ * la interfaz. Cada una avanza el argumento, nombra algo o declara lo que el
+ * lector necesita saber. El manual de uso no es contenido.
+ */
+export interface CopiaSeccion {
+  rotulo: string
+  titulo: string
+  entrada?: string
+}
+
+export interface Secciones {
+  participacion: CopiaSeccion
+  episodio: CopiaSeccion
+  mapa: CopiaSeccion
+  fuentes: CopiaSeccion
+  ayuda: CopiaSeccion
+}
+
+export interface CopiaBarra {
+  capas: { titulo: string; entrada: string }
+  episodio: { titulo: string; linea: string; enlace: string }
+  ayuda: { titulo: string }
 }
 
 export interface Sitio {
@@ -195,5 +225,13 @@ export interface Sitio {
   institucion: string
   ciudad: string
   descripcion: string
-  comoLeer: string
+  /** Nombre accesible del apunte de verificación que abre la lectura. */
+  rotuloVerificacion: string
+  /** La línea que abre la lectura. Enuncia el pacto de verificación. */
+  verificacion: string
+  navegacion: { id: string; etiqueta: string }[]
+  secciones: Secciones
+  barra: CopiaBarra
+  /** Leyenda del mapa. Un pie de figura es legítimo; un manual, no. */
+  leyendaMapa: string
 }
