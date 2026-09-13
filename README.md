@@ -252,8 +252,9 @@ npm run migrar               # crea las tablas
 | `SUPABASE_SERVICE_ROLE_KEY` | Project Settings → API Keys → `service_role` | Leer y escribir |
 | `SUPABASE_DB_URL` | Project Settings → Database → Connection string (URI) | Solo `npm run migrar` |
 | `MURO_MODERACION` | — | `true` (por defecto) o `false` |
+| `MODERACION_CLAVE` | la inventas tú | Entrar a `/moderacion` |
 
-En Vercel hay que definir las dos primeras y `MURO_MODERACION`. `SUPABASE_DB_URL`
+En Vercel hay que definir todas menos `SUPABASE_DB_URL`. `SUPABASE_DB_URL`
 es local: solo sirve para crear las tablas.
 
 Las tablas llevan prefijo `madrugada_` porque comparten proyecto con otra
@@ -264,6 +265,19 @@ aplicación. Sin él, un borrado de mantenimiento ajeno se llevaría los aportes
 Los aportes entran como `pendiente`. La pieza trata de salud mental y lleva el
 nombre de la autora: nada aparece en el muro sin que ella lo haya leído.
 
+**Desde el navegador: `/moderacion`.** Pide la clave de `MODERACION_CLAVE` y
+muestra lo que está en revisión, lo publicado y lo retirado, con un botón por
+aporte. No necesita terminal, ni claves de Supabase, ni ver el resto de la base
+de datos: es el camino pensado para la autora.
+
+La página no se enlaza desde el sitio y pide no ser indexada. La sesión dura
+doce horas en una cookie `httpOnly` firmada con la propia clave: no se puede
+falsificar sin conocerla, y un token caducado no abre nada. La clave se compara
+en tiempo constante y un intento fallido tarda siempre lo mismo, para que
+probar claves a lo bruto sea incómodo.
+
+**Desde la terminal**, si se prefiere:
+
 ```bash
 npm run moderar                      # lista lo que está en revisión
 npm run moderar -- aprobar <id>      # lo publica
@@ -272,7 +286,6 @@ npm run moderar -- ocultar <id>      # lo retira sin borrarlo
 npm run moderar -- publicados
 ```
 
-También se puede cambiar `estado` a mano en el editor de Supabase.
 `MURO_MODERACION=false` publica al instante, sin revisión.
 
 ### Privacidad
