@@ -296,6 +296,23 @@ minutos. El voto se identifica con una cookie `httpOnly` anónima. Los avisos
 que ve el lector cambian según haya base de datos o no: nunca se anuncia una
 permanencia que no existe.
 
+## Entregables académicos
+
+Todo lo que no es el sitio vive en `entregable/`, generado desde scripts para
+poder rehacerlo cuando cambie un dato.
+
+| Archivo | Cómo se genera |
+|---|---|
+| `ACA-turno-de-madrugada.docx` | `npm run word` |
+| `turno-de-madrugada-gestion.xlsx` | `npm run excel` |
+| `guion-lo-que-queda-del-dia.md` | Guion podado del Nodo 2, escrito a mano |
+
+El documento de Word sigue la estructura exacta de la guía —portada, cinco
+secciones y bibliografía— en formato APA, con las capturas del sitio publicado
+incrustadas como evidencia. Lo que la autora debe completar va marcado en
+amarillo dentro del propio documento: **no se inventa ninguna referencia
+bibliográfica ni ningún dato de clase.**
+
 ## Libro de Excel del entregable
 
 ```bash

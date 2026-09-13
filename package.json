@@ -15,7 +15,8 @@
     "lint": "eslint",
     "migrar": "node scripts/migrar.mjs",
     "moderar": "node scripts/moderar.mjs",
-    "excel": "node scripts/excel/generar.mjs"
+    "excel": "node scripts/excel/generar.mjs",
+    "word": "node scripts/word/generar.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",
@@ -29,6 +30,7 @@
     "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "docx": "^9.7.1",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "exceljs": "^4.4.0",
