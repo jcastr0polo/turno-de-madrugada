@@ -20,7 +20,7 @@ export async function GET() {
   if (!bd) return NextResponse.json({ configurado: false, aportes: [] })
 
   const { data, error } = await bd
-    .from('aportes')
+    .from('madrugada_aportes')
     .select('id, alias, texto')
     .eq('estado', 'publicado')
     .order('creado_en', { ascending: false })
@@ -61,7 +61,7 @@ export async function POST(peticion: NextRequest) {
   const desde = new Date(Date.now() - VENTANA_MINUTOS * 60_000).toISOString()
 
   const { count } = await bd
-    .from('aportes')
+    .from('madrugada_aportes')
     .select('id', { count: 'exact', head: true })
     .eq('ip_hash', origen)
     .gte('creado_en', desde)
@@ -71,7 +71,7 @@ export async function POST(peticion: NextRequest) {
   }
 
   const estado = moderacionActiva() ? 'pendiente' : 'publicado'
-  const { error } = await bd.from('aportes').insert({ alias, texto, estado, ip_hash: origen })
+  const { error } = await bd.from('madrugada_aportes').insert({ alias, texto, estado, ip_hash: origen })
 
   if (error) {
     console.error('muro: no se pudo guardar el aporte', error.message)

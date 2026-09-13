@@ -9,7 +9,7 @@ export function CitaFuente({ id }: { id: FuenteId }) {
   const texto = [fuente.entidad, fuente.documento, fuente.detalle].filter(Boolean).join(' · ')
 
   return (
-    <p className="mt-4 font-mono text-meta text-apagado">
+    <p className="font-mono text-meta text-apagado">
       <span className="text-acento">Fuente: </span>
       {fuente.url ? (
         <a

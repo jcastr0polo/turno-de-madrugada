@@ -17,7 +17,14 @@ function leerEntorno() {
       const limpia = linea.trim()
       if (!limpia || limpia.startsWith('#')) continue
       const corte = limpia.indexOf('=')
-      if (corte > 0) entorno[limpia.slice(0, corte)] = limpia.slice(corte + 1).trim()
+      if (corte > 0) {
+        let valor = limpia.slice(corte + 1).trim()
+        // Los bloques que exporta Supabase vienen entrecomillados.
+        if (valor.length >= 2 && valor[0] === valor.at(-1) && (valor[0] === '"' || valor[0] === "'")) {
+          valor = valor.slice(1, -1)
+        }
+        if (valor) entorno[limpia.slice(0, corte)] = valor
+      }
     }
   } catch {
     /* sin archivo: se intenta con el entorno del proceso */
@@ -33,8 +40,19 @@ if (!SUPABASE_DB_URL) {
   process.exit(1)
 }
 
+// La cadena de Supabase trae sslmode=require, que las versiones nuevas de pg
+// interpretan como verify-full y anula la opción `ssl` de abajo. Se quita del
+// URL para que mande la opción explícita.
+//
+// El tráfico sigue cifrado; lo que se salta es la validación de la cadena de
+// certificados, que Node no trae para Supabase. Es una migración puntual de
+// DDL contra un host conocido, no una conexión de la aplicación en producción:
+// el sitio habla con Supabase por HTTPS, no por este socket.
+const destino = new URL(SUPABASE_DB_URL)
+destino.searchParams.delete('sslmode')
+
 const cliente = new pg.Client({
-  connectionString: SUPABASE_DB_URL,
+  connectionString: destino.toString(),
   ssl: { rejectUnauthorized: false },
 })
 
@@ -46,7 +64,7 @@ try {
     select table_name, (select count(*) from information_schema.columns c
                         where c.table_name = t.table_name) as columnas
     from information_schema.tables t
-    where table_schema = 'public' and table_name in ('aportes', 'votos')
+    where table_schema = 'public' and table_name in ('madrugada_aportes', 'madrugada_votos')
     order by table_name
   `)
 

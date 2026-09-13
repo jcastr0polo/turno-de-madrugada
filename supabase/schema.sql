@@ -1,10 +1,15 @@
 -- Esquema de la participación de "El turno de la madrugada".
--- Pegar en Supabase → SQL Editor → Run.
+--
+-- Las tablas conviven en el esquema public de un proyecto compartido, así que
+-- llevan prefijo madrugada_: sin él, un borrado de mantenimiento en el otro
+-- proyecto se llevaría por delante los aportes del público.
+--
+--   npm run migrar        (o pegar este archivo en Supabase → SQL Editor)
 
 -- ---------------------------------------------------------------------------
 -- Aportes del muro
 -- ---------------------------------------------------------------------------
-create table if not exists public.aportes (
+create table if not exists public.madrugada_aportes (
   id        uuid primary key default gen_random_uuid(),
   creado_en timestamptz not null default now(),
   alias     text not null check (char_length(trim(alias)) between 1 and 24),
@@ -18,15 +23,15 @@ create table if not exists public.aportes (
   ip_hash   text
 );
 
-create index if not exists aportes_publicados_idx
-  on public.aportes (estado, creado_en desc);
-create index if not exists aportes_origen_idx
-  on public.aportes (ip_hash, creado_en desc);
+create index if not exists madrugada_aportes_publicados_idx
+  on public.madrugada_aportes (estado, creado_en desc);
+create index if not exists madrugada_aportes_origen_idx
+  on public.madrugada_aportes (ip_hash, creado_en desc);
 
 -- ---------------------------------------------------------------------------
 -- Votos de la encuesta
 -- ---------------------------------------------------------------------------
-create table if not exists public.votos (
+create table if not exists public.madrugada_votos (
   votante   uuid primary key,
   opcion    text not null,
   creado_en timestamptz not null default now()
@@ -38,9 +43,9 @@ create table if not exists public.votos (
 -- Nadie llega a estas tablas desde un navegador. Solo el servidor del sitio,
 -- con la service role key, que nunca sale de las variables de entorno.
 -- ---------------------------------------------------------------------------
-alter table public.aportes enable row level security;
-alter table public.votos   enable row level security;
+alter table public.madrugada_aportes enable row level security;
+alter table public.madrugada_votos   enable row level security;
 
 -- Para moderar: en Table Editor, cambiar `estado` de 'pendiente' a 'publicado'.
 -- O desde SQL:
---   update public.aportes set estado = 'publicado' where id = '...';
+--   update public.madrugada_aportes set estado = 'publicado' where id = '...';

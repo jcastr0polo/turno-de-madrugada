@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { encuesta } from '@/content/participacion'
 
 type Conteo = Record<string, number>
@@ -16,7 +16,6 @@ const vacio = (): Conteo =>
  * memoria y el aviso lo dice: nunca se anuncia una permanencia que no existe.
  */
 export function Encuesta() {
-  const idBase = useId()
   const [conteo, setConteo] = useState<Conteo>(vacio)
   const [elegida, setElegida] = useState<string | null>(null)
   const [persistente, setPersistente] = useState(false)

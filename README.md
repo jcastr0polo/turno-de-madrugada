@@ -229,6 +229,60 @@ Un enlace interno roto no llega a producción en silencio.
 - `prefers-reduced-motion` respetado.
 - Sin `localStorage` y sin dependencias de UI externas.
 
+## Participación y base de datos
+
+El muro y la encuesta guardan en Supabase. **Nada toca Supabase desde el
+navegador**: solo los Route Handlers `/api/muro` y `/api/encuesta`, con la
+`service_role`. No existe ninguna variable `NEXT_PUBLIC_*`, las tablas tienen
+RLS activo y cero políticas públicas.
+
+Sin credenciales el sitio no se rompe: la participación vuelve a memoria y el
+aviso al lector cambia para decir que nada se guarda.
+
+### Puesta en marcha
+
+```bash
+cp .env.example .env.local   # y rellenar
+npm run migrar               # crea las tablas
+```
+
+| Variable | Dónde sale | Para qué |
+|---|---|---|
+| `SUPABASE_URL` | Project Settings → Data API | Leer y escribir |
+| `SUPABASE_SERVICE_ROLE_KEY` | Project Settings → API Keys → `service_role` | Leer y escribir |
+| `SUPABASE_DB_URL` | Project Settings → Database → Connection string (URI) | Solo `npm run migrar` |
+| `MURO_MODERACION` | — | `true` (por defecto) o `false` |
+
+En Vercel hay que definir las dos primeras y `MURO_MODERACION`. `SUPABASE_DB_URL`
+es local: solo sirve para crear las tablas.
+
+Las tablas llevan prefijo `madrugada_` porque comparten proyecto con otra
+aplicación. Sin él, un borrado de mantenimiento ajeno se llevaría los aportes.
+
+### Moderar
+
+Los aportes entran como `pendiente`. La pieza trata de salud mental y lleva el
+nombre de la autora: nada aparece en el muro sin que ella lo haya leído.
+
+```bash
+npm run moderar                      # lista lo que está en revisión
+npm run moderar -- aprobar <id>      # lo publica
+npm run moderar -- aprobar todos
+npm run moderar -- ocultar <id>      # lo retira sin borrarlo
+npm run moderar -- publicados
+```
+
+También se puede cambiar `estado` a mano en el editor de Supabase.
+`MURO_MODERACION=false` publica al instante, sin revisión.
+
+### Privacidad
+
+No se guarda la IP de nadie: se guarda un hash con sal secreta del servidor,
+irreversible, que solo sirve para limitar a tres envíos por origen cada diez
+minutos. El voto se identifica con una cookie `httpOnly` anónima. Los avisos
+que ve el lector cambian según haya base de datos o no: nunca se anuncia una
+permanencia que no existe.
+
 ## Medición
 
 Con el build de producción, no en desarrollo:

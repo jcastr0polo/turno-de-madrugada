@@ -39,8 +39,13 @@ export function verificarContenido(): string[] {
   const capaDatos = capas.datos
   if (capaDatos.id === 'datos') {
     for (const dato of capaDatos.datos) {
-      if (!fuentes[dato.fuente]) {
-        errores.push(`El dato "${dato.id}" cita una fuente no registrada: "${dato.fuente}".`)
+      if (dato.fuentes.length === 0) {
+        errores.push(`El dato "${dato.id}" no cita ninguna fuente.`)
+      }
+      for (const id of dato.fuentes) {
+        if (!fuentes[id]) {
+          errores.push(`El dato "${dato.id}" cita una fuente no registrada: "${id}".`)
+        }
       }
     }
   }

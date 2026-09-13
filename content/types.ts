@@ -92,8 +92,13 @@ export interface Dato {
   /** Cómo debe leerse el dato, para cerrar la puerta a la sobreinterpretación. */
   lectura: string
   detalle: { etiqueta: string; valor: string }[]
-  /** Obligatoria: en este proyecto no existe cifra sin fuente. */
-  fuente: FuenteId
+  /**
+   * Obligatorias: en este proyecto no existe cifra sin fuente. Van en plural
+   * porque una cifra oficial suele tener dos orígenes distintos —quién la
+   * midió y qué norma obliga a medirla— y citar solo el primero esconde la
+   * mitad de la cadena.
+   */
+  fuentes: FuenteId[]
   estado: Estado
 }
 

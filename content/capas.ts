@@ -39,7 +39,7 @@ export const capas: Record<CapaId, Capa> = {
           { etiqueta: 'Aporte de los hombres', valor: '24,1 %' },
           { etiqueta: 'Trabajo de mujeres sobre el PIB', valor: '14,8 %' },
         ],
-        fuente: 'dane',
+        fuentes: ['dane', 'ley1413'],
         estado: 'verificado',
       },
     ],

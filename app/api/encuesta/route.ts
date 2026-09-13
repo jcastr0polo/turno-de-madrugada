@@ -15,7 +15,7 @@ function vacio(): Conteo {
 }
 
 async function contar(bd: NonNullable<ReturnType<typeof supabase>>): Promise<Conteo> {
-  const { data, error } = await bd.from('votos').select('opcion')
+  const { data, error } = await bd.from('madrugada_votos').select('opcion')
   if (error) {
     console.error('encuesta: no se pudieron contar los votos', error.message)
     return vacio()
@@ -37,7 +37,7 @@ export async function GET(peticion: NextRequest) {
   let miVoto: string | null = null
 
   if (votante) {
-    const { data } = await bd.from('votos').select('opcion').eq('votante', votante).maybeSingle()
+    const { data } = await bd.from('madrugada_votos').select('opcion').eq('votante', votante).maybeSingle()
     miVoto = (data as { opcion: string } | null)?.opcion ?? null
   }
 
@@ -67,7 +67,7 @@ export async function POST(peticion: NextRequest) {
   const votante = existente ?? randomUUID()
 
   const { error } = await bd
-    .from('votos')
+    .from('madrugada_votos')
     .upsert({ votante, opcion }, { onConflict: 'votante' })
 
   if (error) {

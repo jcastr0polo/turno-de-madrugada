@@ -50,7 +50,11 @@ export function CuerpoDatos() {
             <p className={`mt-2 ${secundario}`}>{dato.lectura}</p>
           </div>
 
-          <CitaFuente id={dato.fuente} />
+          <div className="mt-4 space-y-2 border-t border-borde pt-4">
+            {dato.fuentes.map((id) => (
+              <CitaFuente key={id} id={id} />
+            ))}
+          </div>
         </div>
       ))}
     </div>

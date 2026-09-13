@@ -13,7 +13,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "migrar": "node scripts/migrar.mjs"
+    "migrar": "node scripts/migrar.mjs",
+    "moderar": "node scripts/moderar.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",
