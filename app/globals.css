@@ -136,6 +136,60 @@
     }
   }
 
+  /*
+   * Barra de avance del reproductor. Se viste el <input type="range"> nativo
+   * en lugar de construir un deslizador propio: así el teclado, el foco y el
+   * anuncio de la posición funcionan sin escribir una línea para ello.
+   */
+  .barra-audio {
+    appearance: none;
+    height: 1.5rem;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .barra-audio::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(
+      to right,
+      var(--color-acento) 0 var(--avance, 0%),
+      var(--color-borde) var(--avance, 0%) 100%
+    );
+  }
+
+  .barra-audio::-moz-range-track {
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(
+      to right,
+      var(--color-acento) 0 var(--avance, 0%),
+      var(--color-borde) var(--avance, 0%) 100%
+    );
+  }
+
+  .barra-audio::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    margin-top: -5px;
+    border-radius: 999px;
+    background: var(--color-acento);
+  }
+
+  .barra-audio::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-acento);
+  }
+
+  .barra-audio:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
   /* Barra de acento del elemento activo en el raíl, como en la referencia. */
   .rail-activo::after {
     content: '';

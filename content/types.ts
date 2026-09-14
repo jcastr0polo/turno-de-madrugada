@@ -164,13 +164,19 @@ export interface FilaTransparencia {
 export interface Episodio {
   titulo: string
   serie: string
-  plataforma: string
   duracion: string
-  /** Qué aporta el audio que no está en el texto. Nunca lo que ya está escrito. */
+  /** Qué se oye en el episodio. */
   aporta: string[]
-  /** `null` mientras no esté publicado: un solo lugar que cambiar. */
-  url: string | null
-  avisoSinPublicar: string
+  /**
+   * Archivo servido desde el propio sitio. La dirección es estable: cuando
+   * llegue la versión final se reemplaza el archivo y el enlace no cambia.
+   */
+  archivo: string
+  /** Enlace externo cuando el episodio esté publicado también fuera del sitio. */
+  externo: { plataforma: string; url: string } | null
+  /** Mientras sea true, el reproductor declara que suena un marcador temporal. */
+  enEdicion: boolean
+  avisoEdicion: string
   estado: Estado
 }
 
@@ -255,5 +261,13 @@ export interface Sitio {
   /** Leyenda del mapa rizomático. Solo se usa en el anexo del entregable. */
   leyendaMapa: string
   /** Copia del anexo: no forma parte del nodo publicado. */
-  anexo: { titulo: string; entrada: string; mapa: string; matriz: string }
+  anexo: {
+    titulo: string
+    entrada: string
+    mapa: string
+    matriz: string
+    excel: string
+    excelPie: string
+    excelArchivo: string
+  }
 }

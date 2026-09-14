@@ -8,7 +8,7 @@
  * propio libro— el resto se recalcula solo. Eso es lo que pide la rúbrica
  * cuando habla de "cálculo matemático claro".
  */
-import { mkdirSync } from 'node:fs'
+import { copyFileSync, mkdirSync } from 'node:fs'
 import ExcelJS from 'exceljs'
 import { cronograma, kpis, pesosIEC, presupuesto, proyecto } from './datos.mjs'
 
@@ -27,16 +27,6 @@ libro.created = new Date()
 // El resumen se crea primero para que quede como primera pestaña, pero se
 // rellena al final: sus celdas son formulas que apuntan a las otras hojas.
 const res = libro.addWorksheet('0. Resumen', { properties: { tabColor: { argb: TINTA } } })
-
-function col(n) {
-  let s = ''
-  while (n > 0) {
-    const r = (n - 1) % 26
-    s = String.fromCharCode(65 + r) + s
-    n = Math.floor((n - 1) / 26)
-  }
-  return s
-}
 
 function titular(hoja, fila, texto, ancho) {
   hoja.mergeCells(fila, 1, fila, ancho)
@@ -457,5 +447,13 @@ nota(res, r, 'PENDIENTE DE VALIDACION: los valores del presupuesto son estimacio
 mkdirSync('entregable', { recursive: true })
 const destino = 'entregable/turno-de-madrugada-gestion.xlsx'
 await libro.xlsx.writeFile(destino)
+
+// Copia servible desde el sitio, en el area de anexos: asi el enlace que se
+// cita en el documento nunca apunta a una version vieja del libro.
+mkdirSync('public/anexos', { recursive: true })
+const publicado = 'public/anexos/gestion-turno-de-madrugada.xlsx'
+copyFileSync(destino, publicado)
+
 console.log(`Libro generado: ${destino}`)
+console.log(`  Publicado en: ${publicado}`)
 console.log(`  Hojas: ${libro.worksheets.map((h) => h.name).join(' · ')}`)

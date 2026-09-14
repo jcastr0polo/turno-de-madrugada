@@ -35,9 +35,7 @@ export function Barra({ meta }: { meta: MetaCapa[] }) {
 
       <Ficha titulo={sitio.barra.episodio.titulo}>
         <p className="font-titular text-lg leading-snug font-semibold">{episodio.titulo}</p>
-        <p className="mt-2 font-mono text-meta text-apagado">
-          {episodio.plataforma} · {episodio.duracion}
-        </p>
+        <p className="mt-2 font-mono text-meta text-apagado">{episodio.duracion}</p>
         <p className="mt-3 text-[0.875rem] leading-[1.6] text-apagado">
           {sitio.barra.episodio.linea}
         </p>

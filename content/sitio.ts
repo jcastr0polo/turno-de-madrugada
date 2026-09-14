@@ -87,5 +87,9 @@ export const sitio: Sitio = {
       'Esta página no forma parte de la pieza publicada. Reúne el material que el entregable académico pide documentar y que en el nodo no tendría lector.',
     mapa: 'Sección 2 · Mapa rizomático de la estructura hipertextual',
     matriz: 'Sección 4 · Matriz de seguimiento de fuentes',
+    excel: 'Sección 5 · Libro de gestión y viabilidad financiera',
+    excelPie:
+      'Presupuesto operativo con CAPEX y OPEX, cronograma de tiempos y movimientos, y tablero de control de impacto con el cálculo del IEC. Todos los totales son fórmulas enlazadas entre hojas.',
+    excelArchivo: '/anexos/gestion-turno-de-madrugada.xlsx',
   },
 }

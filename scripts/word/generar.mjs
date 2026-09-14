@@ -88,14 +88,6 @@ const aviso = (texto) =>
     children: [new TextRun({ text: texto, size: 22, bold: true, color: '92400E' })],
   })
 
-const vineta = (texto) =>
-  new Paragraph({
-    bullet: { level: 0 },
-    spacing: { line: 360, after: 100 },
-    alignment: AlignmentType.JUSTIFIED,
-    children: [new TextRun({ text: texto, size: 24 })],
-  })
-
 function celda(texto, { encabezado = false, ancho = 20 } = {}) {
   return new TableCell({
     width: { size: ancho, type: WidthType.PERCENTAGE },

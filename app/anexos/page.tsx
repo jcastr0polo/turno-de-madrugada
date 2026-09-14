@@ -52,6 +52,25 @@ export default function Anexos() {
         </div>
       </section>
 
+      <section aria-labelledby="anexo-excel" className="border-b border-borde py-12">
+        <h2
+          id="anexo-excel"
+          className="font-mono text-meta tracking-[0.12em] text-acento uppercase"
+        >
+          {sitio.anexo.excel}
+        </h2>
+        <p className="mt-4 max-w-medida text-[1rem] leading-[1.7] text-apagado">
+          {sitio.anexo.excelPie}
+        </p>
+        <a
+          href={sitio.anexo.excelArchivo}
+          download
+          className="mt-6 inline-block rounded-md border border-acento bg-acento px-5 py-3 font-mono text-meta tracking-[0.08em] text-fondo uppercase"
+        >
+          Descargar el libro (.xlsx)
+        </a>
+      </section>
+
       <section aria-labelledby="anexo-matriz" className="py-12">
         <h2
           id="anexo-matriz"
