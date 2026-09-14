@@ -92,6 +92,23 @@ export function NavegacionMovil({
       >
         <div className="px-5 py-6">
           <p className="font-mono text-meta tracking-[0.14em] text-acento uppercase">
+            Secciones
+          </p>
+          <ul className="mt-4 space-y-px">
+            {secciones.map((seccion) => (
+              <li key={seccion.id}>
+                <button
+                  type="button"
+                  onClick={() => irA(seccion.id)}
+                  className="w-full border-l-2 border-l-borde py-3 pl-4 text-left text-[1rem] text-apagado"
+                >
+                  {seccion.etiqueta}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-8 font-mono text-meta tracking-[0.14em] text-acento uppercase">
             Detrás del texto
           </p>
           <ul className="mt-4 space-y-px">
@@ -107,23 +124,6 @@ export function NavegacionMovil({
                   className="w-full border-l-2 border-l-borde py-3 pl-4 text-left text-[1rem] text-apagado"
                 >
                   {capa.etiqueta}
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-8 font-mono text-meta tracking-[0.14em] text-acento uppercase">
-            Secciones
-          </p>
-          <ul className="mt-4 space-y-px">
-            {secciones.map((seccion) => (
-              <li key={seccion.id}>
-                <button
-                  type="button"
-                  onClick={() => irA(seccion.id)}
-                  className="w-full border-l-2 border-l-borde py-3 pl-4 text-left text-[1rem] text-apagado"
-                >
-                  {seccion.etiqueta}
                 </button>
               </li>
             ))}
