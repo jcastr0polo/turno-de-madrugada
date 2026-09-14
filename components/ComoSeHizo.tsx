@@ -4,7 +4,6 @@ import type { Consentimiento } from '@/content/types'
 const rotuloConsentimiento: Record<Consentimiento, string> = {
   'fuente-publica': 'Fuente pública',
   autoconsentimiento: 'Autoconsentimiento',
-  'constancia-de-radicado': 'Constancia de radicado',
   otorgado: 'Otorgado',
   'otorgado-con-reserva': 'Otorgado con reserva de nombre',
   pendiente: 'Pendiente',

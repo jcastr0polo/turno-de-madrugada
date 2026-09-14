@@ -117,10 +117,6 @@ export function CuerpoMetodo() {
           </li>
         ))}
       </ol>
-
-      <div data-ancla="radicado" className="rounded-lg border border-borde bg-fondo p-4">
-        <p className={secundario}>{capa.nota}</p>
-      </div>
     </div>
   )
 }

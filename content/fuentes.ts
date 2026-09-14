@@ -107,12 +107,4 @@ export const transparencia: FilaTransparencia[] = [
     consentimiento: 'autoconsentimiento',
     estado: 'verificado',
   },
-  {
-    id: 'bienestar',
-    fuente: 'Bienestar Universitario CUN',
-    aporte: 'Tiempos de espera, protocolo de crisis y publicación del número',
-    contraste: 'Derecho de petición radicado, respuesta pendiente',
-    consentimiento: 'constancia-de-radicado',
-    estado: 'pendiente',
-  },
 ]

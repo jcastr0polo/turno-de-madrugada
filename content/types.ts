@@ -15,7 +15,6 @@ export type Estado = 'verificado' | 'por-confirmar' | 'pendiente'
 export type Consentimiento =
   | 'fuente-publica'
   | 'autoconsentimiento'
-  | 'constancia-de-radicado'
   | 'otorgado'
   | 'otorgado-con-reserva'
   | 'pendiente'
@@ -124,7 +123,7 @@ export type Capa =
   | (CapaBase & { id: 'glosario'; entradas: EntradaGlosario[] })
   | (CapaBase & { id: 'datos'; datos: Dato[] })
   | (CapaBase & { id: 'contexto'; normas: Norma[]; preguntas: string[] })
-  | (CapaBase & { id: 'metodo'; intro: string; reglas: Regla[]; nota: string })
+  | (CapaBase & { id: 'metodo'; intro: string; reglas: Regla[] })
   | (CapaBase & {
       id: 'ayuda'
       lineas: LineaAyuda[]

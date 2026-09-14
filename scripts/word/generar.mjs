@@ -251,9 +251,7 @@ metodo.reglas.forEach(([titulo, texto]) => {
   }))
   cuerpo.push(P(texto))
 })
-cuerpo.push(H2('4.2 Reportería en curso'))
-cuerpo.push(P(metodo.peticion))
-cuerpo.push(H2('4.3 Matriz de seguimiento de fuentes'))
+cuerpo.push(H2('4.2 Matriz de seguimiento de fuentes'))
 cuerpo.push(tabla(
   ['Fuente', 'Tipo', 'Aporte', 'Contraste realizado', 'Consentimiento', 'Estado'],
   fuentes,

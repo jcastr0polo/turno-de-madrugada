@@ -29,7 +29,9 @@ export const cronica: Cronica = {
         {
           t: 'p',
           contenido: [
-            'Esa frase suena a queja y no lo es. Es una descripción técnica, y en las próximas líneas voy a demostrarla con documentos públicos. Porque lo que me pasa a mí tiene un nombre en las cuentas nacionales de Colombia, tiene un valor en pesos y tiene una ley que obligó a medirlo. Lo que no tiene es ',
+            'Esa frase suena a queja y no lo es. Es una descripción técnica, y en las próximas líneas voy a demostrarla ',
+            { t: 'capa', texto: 'con documentos públicos', capa: 'metodo' },
+            '. Porque lo que me pasa a mí tiene un nombre en las cuentas nacionales de Colombia, tiene un valor en pesos y tiene una ley que obligó a medirlo. Lo que no tiene es ',
             { t: 'capa', texto: 'un lugar donde aparezca esta hora', capa: 'glosario', ancla: 'tercera-jornada' },
             '.',
           ],
@@ -150,15 +152,7 @@ export const cronica: Cronica = {
         {
           t: 'p',
           contenido: [
-            'Le pedí por escrito a Bienestar Universitario tres datos: cuánto tarda en promedio una cita, si existe un protocolo para las crisis fuera del horario de atención, y dónde está publicado el número que sí atiende de madrugada. ',
-            { t: 'capa', texto: 'La solicitud está radicada', capa: 'metodo', ancla: 'radicado' },
-            ' y la ley le da quince días hábiles para responder, así que la respuesta llegará después de que esta crónica se publique. Cuando llegue, va a aparecer aquí.',
-          ],
-        },
-        {
-          t: 'p',
-          contenido: [
-            'Mientras tanto, lo que le pido a mi universidad no es que abra de noche, porque sé que eso no se puede pagar. Le pido tres cosas más baratas: que el 106 esté publicado en la plataforma, que es el único lugar donde entro todos los días; que exista un protocolo escrito para cuando alguien se quiebra fuera del horario; y que cuando programen una entrega a las 11:59 de la noche, sepan quién la está haciendo del otro lado de la pantalla.',
+            'Lo que le pido a mi universidad no es que abra de noche, porque sé que eso no se puede pagar. Le pido tres cosas más baratas: que el 106 esté publicado en la plataforma, que es el único lugar donde entro todos los días; que exista un protocolo escrito para cuando alguien se quiebra fuera del horario; y que cuando programen una entrega a las 11:59 de la noche, sepan quién la está haciendo del otro lado de la pantalla.',
           ],
         },
       ],

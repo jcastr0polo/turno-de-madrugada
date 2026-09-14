@@ -67,7 +67,6 @@ export const metodo = {
     ['Lectura del dato', 'Cada cifra publicada va acompañada de una advertencia sobre cómo no debe leerse. La valoración del trabajo de cuidado es una estimación del costo de mercado de unas horas, no un ingreso que alguien reciba. Publicar la cifra sin esa aclaración induciría al error.'],
     ['Declaración de lo pendiente', 'Lo que no se pudo confirmar se marca como tal en la propia publicación. La vigencia de los Centros de Escucha del Distrito procede de un boletín de 2024 y se advierte que conviene comprobarla antes de acudir.'],
   ],
-  peticion: 'El 7 de septiembre de 2026 se radicó un derecho de petición ante Bienestar Universitario de la CUN solicitando tres datos: el tiempo promedio de espera para una cita, la existencia de un protocolo para crisis fuera del horario de atención, y el lugar donde está publicado el número que atiende de madrugada. El término legal de respuesta es de quince días hábiles, que vencen después de la publicación de esta pieza. La respuesta se incorporará a la crónica cuando llegue.',
 }
 
 export const fuentes = [
@@ -78,7 +77,6 @@ export const fuentes = [
   ['Congreso de la República, Ley 2466 de 2025', 'Normativa', 'Inicio de la jornada nocturna a las 7:00 p. m. y recargo hasta las 6:00 a. m.', 'Texto oficial', 'Fuente pública', 'Verificado'],
   ['Alcaldía Distrital de Santa Marta, boletín institucional (2024)', 'Institucional', 'Centros de Escucha del Distrito, uno de ellos itinerante por barrios', 'Boletín institucional; vigencia no confirmada', 'Fuente pública', 'Por confirmar'],
   ['Relato propio de la autora', 'Testimonial', 'Experiencia de la jornada, del cansancio y del acceso a la ayuda', 'No contrastable por definición: se declara como testimonio, no como afirmación general', 'Autoconsentimiento', 'Verificado'],
-  ['Bienestar Universitario CUN', 'Institucional', 'Tiempos de espera, protocolo de crisis y publicación del número de atención', 'Derecho de petición radicado el 7 de septiembre de 2026; respuesta pendiente', 'Constancia de radicado', 'Pendiente'],
 ]
 
 export const bibliografia = [

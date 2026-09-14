@@ -97,7 +97,6 @@ export const capas: Record<CapaId, Capa> = {
           'Separa lo que me ocurre a mí de lo que puedo afirmar en general. Mi horario, mi cansancio y mi desconocimiento del número son testimonio y se narran en primera persona sin pretender representar a nadie. Todo lo que excede mi experiencia solo se afirma con un documento detrás, y por eso esta crónica no dice que las estudiantes virtuales trasnochan: dice que el trabajo de cuidado está medido y que esas horas existen.',
       },
     ],
-    nota: 'La solicitud a Bienestar Universitario fue radicada el 7 de septiembre de 2026. Término legal de respuesta: quince días hábiles.',
   },
 
   ayuda: {
