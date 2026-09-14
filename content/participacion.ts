@@ -26,7 +26,7 @@ export const muro: Muro = {
   boton: 'Contar mi turno',
   botonEnviando: 'Enviando…',
   aviso:
-    'La autora lee cada aporte antes de publicarlo. No pongas datos que permitan identificarte. Si estás pasando por un momento difícil, las líneas de ayuda están al final.',
+    'Leemos cada aporte antes de publicarlo. No pongas datos que permitan identificarte. Si estás pasando por un momento difícil, las líneas de ayuda están al final.',
   avisoSesion:
     'Lo que escribas vive solo en esta sesión: no se guarda ni se publica. No pongas datos que permitan identificarte. Si estás pasando por un momento difícil, las líneas de ayuda están al final.',
   confirmacion: 'Gracias. Tu turno queda en revisión antes de aparecer en el muro.',

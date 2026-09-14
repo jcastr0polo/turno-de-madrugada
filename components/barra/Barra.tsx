@@ -24,7 +24,7 @@ export function Barra({ meta }: { meta: MetaCapa[] }) {
   return (
     <aside
       aria-label="Documentos y ayuda"
-      className="shrink-0 space-y-5 md:sticky md:top-8 md:max-h-[calc(100dvh-4rem)] md:w-[15rem] md:self-start md:overflow-y-auto md:overscroll-contain lg:w-[18rem]"
+      className="shrink-0 space-y-5 md:mt-14 md:w-[15rem] md:self-start lg:w-[18rem]"
     >
       <Ficha titulo={sitio.barra.capas.titulo}>
         <p className="mb-4 text-[0.875rem] leading-[1.6] text-apagado">

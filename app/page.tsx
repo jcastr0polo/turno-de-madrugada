@@ -110,17 +110,13 @@ export default function Pagina() {
                 <p className="font-mono text-meta tracking-[0.12em] text-acento uppercase">
                   {sitio.serie}
                 </p>
-                <dl className="mt-5 max-w-lectura space-y-3">
-                  {sitio.creditos.map((credito) => (
-                    <div key={credito.rol} className="sm:flex sm:gap-4">
-                      <dt className="font-mono text-meta text-apagado sm:w-[19rem] sm:shrink-0">
-                        {credito.rol}
-                      </dt>
-                      <dd className="text-[0.9375rem] leading-[1.6]">{credito.nombres}</dd>
-                    </div>
-                  ))}
-                </dl>
-                <p className="mt-6 font-mono text-meta text-apagado">{sitio.ciudad}</p>
+                <p className="mt-5 max-w-lectura font-titular text-lg leading-snug font-semibold">
+                  {sitio.creditos.nombres}
+                </p>
+                <p className="mt-3 max-w-lectura text-[0.9375rem] leading-[1.6] text-apagado">
+                  {sitio.creditos.nota}
+                </p>
+                <p className="mt-5 font-mono text-meta text-apagado">{sitio.ciudad}</p>
               </footer>
             </div>
           </main>

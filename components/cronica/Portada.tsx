@@ -24,8 +24,7 @@ export function Portada() {
       </p>
 
       <div className="mt-8 border-t border-borde pt-5">
-        <p className="font-titular text-base font-semibold">{sitio.autora}</p>
-        <p className="mt-3 font-mono text-meta tracking-[0.08em] text-apagado uppercase">
+        <p className="font-mono text-meta tracking-[0.08em] text-apagado uppercase">
           {sitio.metadatos.join(' · ')}
         </p>
       </div>

@@ -262,7 +262,7 @@ export interface Sitio {
    * Sin asignatura ni institución: eso es portada del entregable, no firma de
    * una pieza publicada.
    */
-  creditos: { rol: string; nombres: string }[]
+  creditos: { nombres: string; nota: string }
   secciones: Secciones
   barra: CopiaBarra
   /** Leyenda del mapa rizomático. Solo se usa en el anexo del entregable. */

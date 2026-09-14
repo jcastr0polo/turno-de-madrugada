@@ -25,7 +25,7 @@ export const sitio: Sitio = {
 
   // Enuncia el pacto de verificación de la pieza. Que además enseñe dónde se
   // puede entrar es consecuencia, no propósito.
-  rotuloVerificacion: 'Nota de la autora',
+  rotuloVerificacion: 'Nota sobre la verificación',
   verificacion: 'Lo que no es mío está marcado. Detrás de cada marca está el documento que lo sostiene.',
 
   navegacion: [
@@ -36,13 +36,10 @@ export const sitio: Sitio = {
     { id: 'ayuda', etiqueta: 'Ayuda' },
   ],
 
-  creditos: [
-    { rol: 'Relato, investigación, escritura y producción sonora', nombres: 'Leidy Carolina Granados Celis' },
-    {
-      rol: 'Desarrollo e integración del ecosistema digital',
-      nombres: 'Leidy Carolina Granados Celis y Alexis Triana Quintana',
-    },
-  ],
+  creditos: {
+    nombres: 'Leidy Carolina Granados Celis y Alexis Triana Quintana',
+    nota: 'Relato, investigación, escritura, producción sonora y desarrollo del ecosistema digital.',
+  },
 
   secciones: {
     participacion: {
