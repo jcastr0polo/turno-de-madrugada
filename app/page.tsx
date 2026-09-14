@@ -8,7 +8,6 @@ import {
   CuerpoGlosario,
   CuerpoMetodo,
 } from '@/components/capas/cuerpos'
-import { Verificacion } from '@/components/cronica/Verificacion'
 import { Cronica } from '@/components/cronica/Cronica'
 import { Portada } from '@/components/cronica/Portada'
 import { FuentesPublicas } from '@/components/FuentesPublicas'
@@ -63,7 +62,6 @@ export default function Pagina() {
           <main className="grow min-w-0 px-5 pb-16 sm:px-8 sm:pb-0">
             <div className="mx-auto flex w-full max-w-ancho flex-col">
               <Portada />
-              <Verificacion />
 
               <div className="pb-4 md:flex md:max-w-[55.5rem] md:gap-10 lg:max-w-[58.5rem]">
                 <div className="grow">

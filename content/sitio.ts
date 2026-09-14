@@ -23,10 +23,6 @@ export const sitio: Sitio = {
   descripcion:
     'Crónica hipertextual sobre la madrugada como tercera jornada de una estudiante virtual que además es madre y trabaja por su cuenta. Estudiar de madrugada no es indisciplina: es aritmética.',
 
-  // Enuncia el pacto de verificación de la pieza. Que además enseñe dónde se
-  // puede entrar es consecuencia, no propósito.
-  rotuloVerificacion: 'Nota sobre la verificación',
-  verificacion: 'Lo que no es mío está marcado. Detrás de cada marca está el documento que lo sostiene.',
 
   navegacion: [
     { id: 'cronica', etiqueta: 'Crónica' },

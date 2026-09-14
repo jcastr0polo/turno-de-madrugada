@@ -200,6 +200,9 @@ export interface Muro {
   error: string
   exceso: string
   vacio: string
+  verMas: string
+  titulo: string
+  tituloSesion: string
   marcadorAlias: string
   marcadorTexto: string
   maxCaracteres: number
@@ -247,10 +250,6 @@ export interface Sitio {
   institucion: string
   ciudad: string
   descripcion: string
-  /** Nombre accesible del apunte de verificación que abre la lectura. */
-  rotuloVerificacion: string
-  /** La línea que abre la lectura. Enuncia el pacto de verificación. */
-  verificacion: string
   navegacion: { id: string; etiqueta: string }[]
   /**
    * Créditos del pie, por rol.

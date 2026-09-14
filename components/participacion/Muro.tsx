@@ -3,6 +3,8 @@
 import { useEffect, useId, useState, type FormEvent } from 'react'
 import { muro } from '@/content/participacion'
 
+const TANDA = 6
+
 interface Aporte {
   id: string
   alias: string
@@ -25,6 +27,10 @@ export function Muro() {
   const [persistente, setPersistente] = useState(false)
   const [enviando, setEnviando] = useState(false)
   const [mensaje, setMensaje] = useState<string | null>(null)
+  // Se muestran de seis en seis. Apilarlos todos empuja el episodio, las
+  // fuentes y las lineas de ayuda al fondo de la pagina, y en una pieza sobre
+  // salud mental alejar el 106 es lo ultimo que conviene hacer.
+  const [visibles, setVisibles] = useState(TANDA)
 
   useEffect(() => {
     let vigente = true
@@ -111,7 +117,7 @@ export function Muro() {
             maxLength={muro.maxAlias}
             autoComplete="off"
             onChange={(evento) => setAlias(evento.target.value)}
-            className="mt-2 w-full rounded-md border border-borde bg-superficie px-4 py-3 text-[0.9375rem] text-texto placeholder:text-apagado/60"
+            className="mt-2 w-full rounded-md border border-borde bg-superficie px-4 py-3 text-base text-texto placeholder:text-apagado/60 sm:text-[0.9375rem]"
             placeholder={muro.marcadorAlias}
           />
         </div>
@@ -131,7 +137,7 @@ export function Muro() {
             maxLength={muro.maxCaracteres}
             onChange={(evento) => setTexto(evento.target.value)}
             aria-describedby={`${idBase}-cuenta ${idBase}-aviso`}
-            className="mt-2 w-full resize-y rounded-md border border-borde bg-superficie px-4 py-3 text-[0.9375rem] leading-[1.7] text-texto placeholder:text-apagado/60"
+            className="mt-2 w-full resize-y rounded-md border border-borde bg-superficie px-4 py-3 text-base leading-[1.7] text-texto placeholder:text-apagado/60 sm:text-[0.9375rem]"
             placeholder={muro.marcadorTexto}
           />
           <p id={`${idBase}-cuenta`} className="mt-2 font-mono text-meta text-apagado">
@@ -158,23 +164,39 @@ export function Muro() {
 
       <div className="border-t border-borde pt-8">
         <h3 className="font-mono text-meta tracking-[0.12em] text-acento uppercase">
-          {persistente ? 'Turnos publicados' : 'Turnos de esta sesión'}
+          {persistente ? muro.titulo : muro.tituloSesion}
+          {aportes.length > 0 && <span className="text-apagado"> · {aportes.length}</span>}
         </h3>
 
-        <ul aria-live="polite" className="mt-5 space-y-4">
-          {aportes.length === 0 && (
-            <li className="rounded-lg border border-dashed border-borde px-4 py-6 text-[0.9375rem] text-apagado">
-              {muro.vacio}
-            </li>
-          )}
+        {aportes.length === 0 ? (
+          <p className="mt-5 rounded-lg border border-dashed border-borde px-4 py-6 text-[0.9375rem] text-apagado">
+            {muro.vacio}
+          </p>
+        ) : (
+          <>
+            <ul aria-live="polite" className="mt-5 grid gap-4 sm:grid-cols-2">
+              {aportes.slice(0, visibles).map((aporte) => (
+                <li
+                  key={aporte.id}
+                  className="rounded-lg border border-borde bg-superficie px-4 py-4"
+                >
+                  <p className="font-mono text-meta text-acento">{aporte.alias}</p>
+                  <p className="mt-2 text-[0.9375rem] leading-[1.7]">{aporte.texto}</p>
+                </li>
+              ))}
+            </ul>
 
-          {aportes.map((aporte) => (
-            <li key={aporte.id} className="rounded-lg border border-borde bg-superficie px-4 py-4">
-              <p className="font-mono text-meta text-acento">{aporte.alias}</p>
-              <p className="mt-2 text-[0.9375rem] leading-[1.7]">{aporte.texto}</p>
-            </li>
-          ))}
-        </ul>
+            {visibles < aportes.length && (
+              <button
+                type="button"
+                onClick={() => setVisibles((n) => n + TANDA)}
+                className="mt-5 w-full rounded-md border border-borde py-3 font-mono text-meta tracking-[0.08em] text-apagado uppercase transition-colors hover:border-acento hover:text-texto sm:w-auto sm:px-6"
+              >
+                {muro.verMas} ({aportes.length - visibles})
+              </button>
+            )}
+          </>
+        )}
       </div>
     </div>
   )

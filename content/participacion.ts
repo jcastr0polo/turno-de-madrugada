@@ -34,6 +34,9 @@ export const muro: Muro = {
   error: 'No se pudo guardar. Inténtalo de nuevo en un momento.',
   exceso: 'Has enviado varios aportes seguidos. Espera unos minutos.',
   vacio: 'Todavía no hay turnos publicados.',
+  verMas: 'Ver más turnos',
+  titulo: 'Turnos publicados',
+  tituloSesion: 'Turnos de esta sesión',
   marcadorAlias: 'Cómo quieres firmar',
   // Encauza a proposito. "A que hora estudias" se contesta con "de once a una"
   // y no cuenta nada; esto solo se puede responder contando algo. Sale de la
