@@ -120,12 +120,20 @@ export const cronica: Cronica = {
         {
           t: 'p',
           contenido: [
-            'Para un estudiante presencial existe, al menos, un edificio. Para mí, que estudio virtual, Bienestar Universitario es un correo y un formulario, y un correo no contesta a la una y cuarenta y siete de la mañana.',
+            'Para un estudiante presencial existe, al menos, un edificio. Para mí, que estudio virtual, Bienestar Universitario no es una oficina: es una plataforma y un centro de asistencia en línea, los camitickets, donde uno abre un caso y espera. Cuánto se espera no está escrito en ninguna parte. ',
+            { t: 'capa', texto: 'Lo sé por experiencia', capa: 'metodo', ancla: 'tickets' },
+            ': un promedio de cuatro días hábiles, salvo cuando el caso queda mal clasificado y se va a semanas, o lo redirigen a otra dependencia, o contestan algo que no era lo que uno preguntó. La clasificación la elige uno mismo al abrirlo, casi siempre sin saber cuál corresponde.',
           ],
         },
         {
           t: 'p',
-          contenido: ['Queda entonces el teléfono. Y ahí aparece el dato que ordena toda esta crónica.'],
+          contenido: [
+            'Un ticket sirve para pedir un certificado. No sirve para la una y cuarenta y siete de la mañana. Nadie abre un caso y espera turno cuando lo que necesita es que alguien conteste ahora.',
+          ],
+        },
+        {
+          t: 'p',
+          contenido: ['Queda entonces el teléfono.'],
         },
         {
           t: 'p',
@@ -150,21 +158,7 @@ export const cronica: Cronica = {
         {
           t: 'p',
           contenido: [
-            'Sí hay por dónde preguntar. La CUN tiene un centro de asistencia donde uno abre un ticket, y ahí caen las solicitudes de todo el mundo. Lo que no encontré por ninguna parte es cuánto tarda en contestar. Y ',
-            { t: 'capa', texto: 'por experiencia sé lo que pasa', capa: 'metodo', ancla: 'tickets' },
-            ': si el ticket queda mal direccionado puede demorarse semanas, y si queda bien direccionado y hay suerte, un par de días. Esa diferencia, que decide si a alguien lo atienden o no, depende de si acertó la categoría al abrirlo.',
-          ],
-        },
-        {
-          t: 'p',
-          contenido: [
-            'Un ticket sirve para pedir un certificado. No sirve para la una y cuarenta y siete de la mañana. Nadie abre un caso y espera turno cuando lo que necesita es que alguien conteste ahora.',
-          ],
-        },
-        {
-          t: 'p',
-          contenido: [
-            'Lo que le pido a mi universidad no es que abra de noche, porque sé que eso no se puede pagar. Le pido tres cosas más baratas: que el 106 esté publicado en la plataforma, que es el único lugar donde entro todos los días; que exista un protocolo escrito para cuando alguien se quiebra fuera del horario; y que cuando programen una entrega a las 11:59 de la noche, sepan quién la está haciendo del otro lado de la pantalla.',
+            'Lo que le pido a mi universidad no es que abra de noche, porque sé que eso no se puede pagar. Le pido tres cosas más baratas: que el 106 esté publicado en la plataforma, que es el único lugar donde entro todos los días; que exista un protocolo escrito para cuando alguien se quiebra fuera del horario, y que se sepa quién lo activa, porque un protocolo sin responsable no existe; y que cuando programen una entrega a las 11:59 de la noche de un domingo, sepan quién la está haciendo del otro lado de la pantalla.',
           ],
         },
       ],
