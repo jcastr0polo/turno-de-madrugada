@@ -166,7 +166,7 @@ export function Reproductor({
             <button
               type="button"
               onClick={cambiarVelocidad}
-              aria-label={`Velocidad de reproducción: ${velocidad} por uno. Pulsa para cambiar.`}
+              aria-label={`${velocidad}× velocidad de reproducción. Pulsa para cambiarla.`}
               className="ml-auto shrink-0 rounded-md border border-borde px-3 py-2 font-mono text-meta text-apagado transition-colors hover:border-trazo hover:text-texto"
             >
               {velocidad}×

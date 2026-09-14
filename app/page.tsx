@@ -14,6 +14,7 @@ import { Portada } from '@/components/cronica/Portada'
 import { FuentesPublicas } from '@/components/FuentesPublicas'
 import { TarjetaEpisodio } from '@/components/Episodio'
 import { Navegacion } from '@/components/Navegacion'
+import { NavegacionMovil } from '@/components/NavegacionMovil'
 import { RutasDeAyuda } from '@/components/RutasDeAyuda'
 import { Encuesta } from '@/components/participacion/Encuesta'
 import { Muro } from '@/components/participacion/Muro'
@@ -57,8 +58,9 @@ export default function Pagina() {
       <div className="mx-auto max-w-[80rem]">
         <div className="flex min-h-screen">
           <Navegacion secciones={sitio.navegacion} />
+          <NavegacionMovil secciones={sitio.navegacion} capas={meta} />
 
-          <main className="grow overflow-hidden px-5 sm:px-8">
+          <main className="grow min-w-0 px-5 pb-16 sm:px-8 sm:pb-0">
             <div className="mx-auto flex w-full max-w-ancho flex-col">
               <Portada />
               <Verificacion />
