@@ -1,12 +1,8 @@
 import { Reproductor } from '@/components/Reproductor'
-import { suenaElMarcador } from '@/lib/episodio-servidor'
 import { episodio } from '@/content/episodio'
 
 /** Tarjeta de la segunda pieza de la serie: el episodio y qué se oye en él. */
 export function TarjetaEpisodio() {
-  // Se comprueba en el servidor: el cliente no necesita saberlo.
-  const provisional = suenaElMarcador()
-
   return (
     <div className="max-w-lectura rounded-lg border border-borde bg-superficie p-6 sm:p-8">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-meta tracking-[0.12em] text-apagado uppercase">
@@ -25,14 +21,6 @@ export function TarjetaEpisodio() {
         duracion={episodio.duracion}
       />
 
-      {provisional && (
-        <p className="mt-4 flex gap-3 text-[0.875rem] leading-[1.6] text-apagado">
-          <span aria-hidden="true" className="font-mono text-acento">
-            —
-          </span>
-          <span>{episodio.avisoEdicion}</span>
-        </p>
-      )}
 
       <div className="mt-8 border-t border-borde pt-6">
         <p className="font-mono text-meta tracking-[0.12em] text-acento uppercase">En el audio</p>

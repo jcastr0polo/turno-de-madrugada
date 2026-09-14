@@ -18,18 +18,6 @@ export const RUTA_EPISODIO = '/audio/lo-que-queda-del-dia.mp3'
  */
 export const EPISODIO_EXTERNO: { plataforma: string; url: string } | null = null
 
-/**
- * Huella del archivo provisional.
- *
- * El aviso de "en edición" no depende de que alguien se acuerde de apagarlo:
- * el servidor compara el archivo que hay en `public/audio/` con esta huella.
- * Si coincide, suena el marcador y lo dice. En cuanto se reemplaza por el
- * episodio real, la huella deja de coincidir y el aviso desaparece solo.
- *
- * No hay nada que tocar en el código al publicar el audio definitivo.
- */
-export const HUELLA_MARCADOR = '263563ba89f79f7da7958453ee0ac6c12f51a12fbc6a140553fd8458d8d31e2f'
-
 export const episodio: Episodio = {
   titulo: 'Lo que queda del día',
   serie: 'Turno de madrugada',
@@ -43,7 +31,5 @@ export const episodio: Episodio = {
   ],
   archivo: RUTA_EPISODIO,
   externo: EPISODIO_EXTERNO,
-  avisoEdicion:
-    'Lo que suena ahora es un marcador temporal. El episodio está en edición y quedará en esta misma dirección.',
   estado: 'pendiente',
 }

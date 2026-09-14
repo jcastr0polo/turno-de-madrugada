@@ -174,8 +174,6 @@ export interface Episodio {
   archivo: string
   /** Enlace externo cuando el episodio esté publicado también fuera del sitio. */
   externo: { plataforma: string; url: string } | null
-  /** Aviso que se muestra solo mientras el archivo sea el marcador temporal. */
-  avisoEdicion: string
   estado: Estado
 }
 
