@@ -188,6 +188,9 @@ export interface Encuesta {
 
 export interface Muro {
   invitacion: string
+  /** Texto del botón. Es contenido: pide algo, no ejecuta un trámite. */
+  boton: string
+  botonEnviando: string
   /** Con base de datos conectada. */
   aviso: string
   /** Sin base de datos: nada se guarda. */

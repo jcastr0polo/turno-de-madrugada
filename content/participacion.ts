@@ -19,7 +19,12 @@ export const encuesta: Encuesta = {
 }
 
 export const muro: Muro = {
-  invitacion: 'Escribe en una o dos frases cuál es tu turno y qué haces en él.',
+  // La encuesta ya recoge la hora. El muro es el unico sitio donde cabe lo que
+  // no entra en cuatro opciones, asi que aqui se pregunta por lo que pasa en
+  // esa hora, no por el horario otra vez.
+  invitacion: 'Cuenta qué haces en esa hora. Con una o dos frases basta.',
+  boton: 'Contar mi turno',
+  botonEnviando: 'Enviando…',
   aviso:
     'La autora lee cada aporte antes de publicarlo. No pongas datos que permitan identificarte. Si estás pasando por un momento difícil, las líneas de ayuda están al final.',
   avisoSesion:
@@ -30,7 +35,10 @@ export const muro: Muro = {
   exceso: 'Has enviado varios aportes seguidos. Espera unos minutos.',
   vacio: 'Todavía no hay turnos publicados.',
   marcadorAlias: 'Cómo quieres firmar',
-  marcadorTexto: 'A qué hora estudias o trabajas, y qué haces en esa hora',
+  // Encauza a proposito. "A que hora estudias" se contesta con "de once a una"
+  // y no cuenta nada; esto solo se puede responder contando algo. Sale de la
+  // propia cronica: "muchas veces tengo que decirle que no puedo".
+  marcadorTexto: 'Qué adelantas, qué aplazas, a quién le dices que ahora no',
   maxCaracteres: 180,
   maxAlias: 24,
 }

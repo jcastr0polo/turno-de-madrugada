@@ -144,7 +144,7 @@ export function Muro() {
           disabled={!valido || enviando}
           className="rounded-md border border-acento bg-acento px-5 py-3 font-mono text-meta tracking-[0.08em] text-fondo uppercase transition-opacity disabled:cursor-not-allowed disabled:border-borde disabled:bg-transparent disabled:text-apagado"
         >
-          {enviando ? 'Enviando…' : 'Publicar aporte'}
+          {enviando ? muro.botonEnviando : muro.boton}
         </button>
 
         <p aria-live="polite" className="text-meta leading-relaxed text-acento empty:hidden">
