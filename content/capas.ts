@@ -97,6 +97,7 @@ export const capas: Record<CapaId, Capa> = {
           'Separa lo que me ocurre a mí de lo que puedo afirmar en general. Mi horario, mi cansancio y mi desconocimiento del número son testimonio y se narran en primera persona sin pretender representar a nadie. Todo lo que excede mi experiencia solo se afirma con un documento detrás, y por eso esta crónica no dice que las estudiantes virtuales trasnochan: dice que el trabajo de cuidado está medido y que esas horas existen.',
       },
     ],
+    nota: 'El centro de asistencia de la CUN funciona con tickets y está abierto en línea, pero no publica un tiempo de respuesta comprometido: quien lo abre no sabe si le contestan en dos días o en tres semanas. Lo que esta crónica afirma sobre ese sistema se divide en dos: que el canal existe y es público, comprobable en el enlace; y que el tiempo depende del direccionamiento del caso, que es experiencia de la autora y se declara como tal, no como dato institucional.',
   },
 
   ayuda: {

@@ -53,6 +53,15 @@ export const fuentes: Record<string, Fuente> = {
     documento: 'Ley 2466 de 2025',
     tipo: 'normativa',
   },
+  cunAsistencia: {
+    id: 'cunAsistencia',
+    entidad: 'CUN',
+    documento: 'Centro de Asistencia',
+    detalle: 'Canal oficial de solicitudes',
+    url: 'https://servicioscun.zohodesk.com/portal/es/home',
+    aporte: 'El canal oficial por el que se abren las solicitudes en la universidad.',
+    tipo: 'institucional',
+  },
   santaMarta: {
     id: 'santaMarta',
     aporte: 'La oferta local de escucha en Santa Marta.',

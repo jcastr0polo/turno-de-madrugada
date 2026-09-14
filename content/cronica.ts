@@ -29,9 +29,7 @@ export const cronica: Cronica = {
         {
           t: 'p',
           contenido: [
-            'Esa frase suena a queja y no lo es. Es una descripción técnica, y en las próximas líneas voy a demostrarla ',
-            { t: 'capa', texto: 'con documentos públicos', capa: 'metodo' },
-            '. Porque lo que me pasa a mí tiene un nombre en las cuentas nacionales de Colombia, tiene un valor en pesos y tiene una ley que obligó a medirlo. Lo que no tiene es ',
+            'Esa frase suena a queja y no lo es. Es una descripción técnica, y en las próximas líneas voy a demostrarla con documentos públicos. Porque lo que me pasa a mí tiene un nombre en las cuentas nacionales de Colombia, tiene un valor en pesos y tiene una ley que obligó a medirlo. Lo que no tiene es ',
             { t: 'capa', texto: 'un lugar donde aparezca esta hora', capa: 'glosario', ancla: 'tercera-jornada' },
             '.',
           ],
@@ -147,6 +145,20 @@ export const cronica: Cronica = {
           t: 'p',
           contenido: [
             'Yo no me la sabía. Ese es el punto. Estudio comunicación, hice este trabajo, leí las leyes, y no me sabía el número.',
+          ],
+        },
+        {
+          t: 'p',
+          contenido: [
+            'Sí hay por dónde preguntar. La CUN tiene un centro de asistencia donde uno abre un ticket, y ahí caen las solicitudes de todo el mundo. Lo que no encontré por ninguna parte es cuánto tarda en contestar. Y ',
+            { t: 'capa', texto: 'por experiencia sé lo que pasa', capa: 'metodo', ancla: 'tickets' },
+            ': si el ticket queda mal direccionado puede demorarse semanas, y si queda bien direccionado y hay suerte, un par de días. Esa diferencia, que decide si a alguien lo atienden o no, depende de si acertó la categoría al abrirlo.',
+          ],
+        },
+        {
+          t: 'p',
+          contenido: [
+            'Un ticket sirve para pedir un certificado. No sirve para la una y cuarenta y siete de la mañana. Nadie abre un caso y espera turno cuando lo que necesita es que alguien conteste ahora.',
           ],
         },
         {
