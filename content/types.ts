@@ -174,8 +174,7 @@ export interface Episodio {
   archivo: string
   /** Enlace externo cuando el episodio esté publicado también fuera del sitio. */
   externo: { plataforma: string; url: string } | null
-  /** Mientras sea true, el reproductor declara que suena un marcador temporal. */
-  enEdicion: boolean
+  /** Aviso que se muestra solo mientras el archivo sea el marcador temporal. */
   avisoEdicion: string
   estado: Estado
 }
