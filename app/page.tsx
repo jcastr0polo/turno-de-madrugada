@@ -65,7 +65,7 @@ export default function Pagina() {
               <Portada />
               <Verificacion />
 
-              <div className="pb-4 md:flex md:gap-10">
+              <div className="pb-4 md:flex md:max-w-[55.5rem] md:gap-10 lg:max-w-[58.5rem]">
                 <div className="grow">
                   <Cronica />
                 </div>
@@ -106,10 +106,21 @@ export default function Pagina() {
 
               <RutasDeAyuda />
 
-              <footer className="border-t border-borde py-8">
-                <p className="font-mono text-meta leading-relaxed text-apagado">
-                  {sitio.creditos}
+              <footer className="border-t border-borde py-10">
+                <p className="font-mono text-meta tracking-[0.12em] text-acento uppercase">
+                  {sitio.serie}
                 </p>
+                <dl className="mt-5 max-w-lectura space-y-3">
+                  {sitio.creditos.map((credito) => (
+                    <div key={credito.rol} className="sm:flex sm:gap-4">
+                      <dt className="font-mono text-meta text-apagado sm:w-[19rem] sm:shrink-0">
+                        {credito.rol}
+                      </dt>
+                      <dd className="text-[0.9375rem] leading-[1.6]">{credito.nombres}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-6 font-mono text-meta text-apagado">{sitio.ciudad}</p>
               </footer>
             </div>
           </main>

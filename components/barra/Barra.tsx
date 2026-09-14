@@ -51,15 +51,15 @@ export function Barra({ meta }: { meta: MetaCapa[] }) {
         <Ficha titulo={sitio.barra.ayuda.titulo}>
           <ul className="space-y-3">
             {capaAyuda.lineas.map((linea) => (
-              <li key={linea.numero} className="flex items-baseline gap-3">
+              <li key={linea.numero}>
                 <a
                   href={`tel:${linea.numero}`}
-                  className="font-mono text-lg text-acento underline decoration-transparent underline-offset-4 transition-colors hover:decoration-acento"
+                  className="font-mono text-xl text-acento underline decoration-transparent underline-offset-4 transition-colors hover:decoration-acento"
                 >
                   {linea.numero}
                   <span className="sr-only">, llamar</span>
                 </a>
-                <span className="text-[0.8125rem] leading-[1.5] text-apagado">{linea.nombre}</span>
+                <p className="mt-1 text-[0.8125rem] leading-[1.45] text-apagado">{linea.nombre}</p>
               </li>
             ))}
           </ul>

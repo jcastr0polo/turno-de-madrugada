@@ -249,9 +249,17 @@ export interface Sitio {
   /** La línea que abre la lectura. Enuncia el pacto de verificación. */
   verificacion: string
   navegacion: { id: string; etiqueta: string }[]
-  /** Línea de créditos del pie. Sin asignatura ni institución: eso es portada
-   *  del entregable, no firma de una pieza publicada. */
-  creditos: string
+  /**
+   * Créditos del pie, por rol.
+   *
+   * La firma de la cabecera dice quién escribió la crónica; los créditos dicen
+   * quién hizo qué en el proyecto. No son lo mismo y no se mezclan: un relato
+   * en primera persona tiene una sola firma.
+   *
+   * Sin asignatura ni institución: eso es portada del entregable, no firma de
+   * una pieza publicada.
+   */
+  creditos: { rol: string; nombres: string }[]
   secciones: Secciones
   barra: CopiaBarra
   /** Leyenda del mapa rizomático. Solo se usa en el anexo del entregable. */

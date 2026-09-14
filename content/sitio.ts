@@ -36,7 +36,13 @@ export const sitio: Sitio = {
     { id: 'ayuda', etiqueta: 'Ayuda' },
   ],
 
-  creditos: 'Turno de madrugada · Leidy Carolina Granados Celis · Santa Marta, Magdalena',
+  creditos: [
+    { rol: 'Relato, investigación, escritura y producción sonora', nombres: 'Leidy Carolina Granados Celis' },
+    {
+      rol: 'Desarrollo e integración del ecosistema digital',
+      nombres: 'Leidy Carolina Granados Celis y Alexis Triana Quintana',
+    },
+  ],
 
   secciones: {
     participacion: {
