@@ -120,7 +120,7 @@ export const cronica: Cronica = {
         {
           t: 'p',
           contenido: [
-            'Para un estudiante presencial existe, al menos, un edificio. Para mí, que estudio virtual, Bienestar Universitario es un correo y un formulario, y un correo no contesta a las tres y cuarenta y siete de la mañana.',
+            'Para un estudiante presencial existe, al menos, un edificio. Para mí, que estudio virtual, Bienestar Universitario es un correo y un formulario, y un correo no contesta a la una y cuarenta y siete de la mañana.',
           ],
         },
         {

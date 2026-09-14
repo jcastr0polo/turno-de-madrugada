@@ -14,7 +14,7 @@ export const sitio: Sitio = {
   tituloMarcado: 'la madrugada',
   bajada:
     'Estudio a la una de la mañana. No porque rinda: porque es la única hora del día que nadie reclama. Esta es la cuenta de por qué, hecha con los papeles del propio Estado.',
-  hora: '3:47 a. m.',
+  hora: '1:47 a. m.',
   metadatos: ['Santa Marta', 'Septiembre de 2026'],
   autora: 'Leidy Carolina Granados Celis',
   asignatura: 'Taller de Creación de Contenidos',

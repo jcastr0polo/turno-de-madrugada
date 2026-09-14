@@ -366,5 +366,5 @@ Todo lo que sigue **ya está en la crónica web**, palabra por palabra o casi. D
    son los más descriptivos.
 
 
-1. **La hora.** Aquí dice *"la una y cuarenta y siete"*; la portada de la web dice **3:47 a. m.** Hay que unificar, o explicar que son dos noches distintas.
+1. **La hora.** Unificada en **la una y cuarenta y siete** en las dos piezas. Era la hora que aparecía en todo el relato —el antetítulo, la bajada, el cuerpo—; el 3:47 venía del encargo original y se retiró.
 2. **La autoría técnica.** Tu texto original acreditaba el desarrollo a *"Leidy Carolina Granados Celis y Alexis"*. Lo dejé fuera del cierre para no alargarlo, pero si esa autoría compartida va, hay que reflejarla también en el pie del sitio.
