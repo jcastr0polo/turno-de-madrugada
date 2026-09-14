@@ -48,7 +48,6 @@ export const sitio: Sitio = {
     participacion: {
       rotulo: 'Otros turnos',
       titulo: 'La hora que nadie reclama',
-      entrada: 'Esta cuenta es de una sola persona. Faltan las demás.',
     },
     episodio: {
       rotulo: 'Segunda entrega',
