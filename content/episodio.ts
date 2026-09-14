@@ -21,7 +21,7 @@ export const EPISODIO_EXTERNO: { plataforma: string; url: string } | null = null
 export const episodio: Episodio = {
   titulo: 'Lo que queda del día',
   serie: 'Turno de madrugada',
-  duracion: '13 min 45 s',
+  duracion: '11 min 28 s',
   // Qué se oye, no en qué se diferencia del texto: comparar formatos es hablar
   // de la publicación en vez de hablar de la madrugada.
   aporta: [
