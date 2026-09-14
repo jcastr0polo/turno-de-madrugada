@@ -8,7 +8,7 @@
  * propio libro— el resto se recalcula solo. Eso es lo que pide la rúbrica
  * cuando habla de "cálculo matemático claro".
  */
-import { copyFileSync, mkdirSync } from 'node:fs'
+import { mkdirSync } from 'node:fs'
 import ExcelJS from 'exceljs'
 import { cronograma, kpis, pesosIEC, presupuesto, proyecto } from './datos.mjs'
 
@@ -448,12 +448,10 @@ mkdirSync('entregable', { recursive: true })
 const destino = 'entregable/turno-de-madrugada-gestion.xlsx'
 await libro.xlsx.writeFile(destino)
 
-// Copia servible desde el sitio, en el area de anexos: asi el enlace que se
-// cita en el documento nunca apunta a una version vieja del libro.
-mkdirSync('public/anexos', { recursive: true })
-const publicado = 'public/anexos/gestion-turno-de-madrugada.xlsx'
-copyFileSync(destino, publicado)
+// Deliberadamente NO se copia a public/anexos/: ese archivo lo coloca la
+// autora con su propia version. Un generador que pisa el trabajo de alguien
+// es una trampa, no una comodidad.
 
 console.log(`Libro generado: ${destino}`)
-console.log(`  Publicado en: ${publicado}`)
+console.log('  Para publicarlo: copiarlo a public/anexos/gestion-turno-de-madrugada.xlsx')
 console.log(`  Hojas: ${libro.worksheets.map((h) => h.name).join(' · ')}`)
